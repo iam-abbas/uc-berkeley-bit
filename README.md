@@ -1,2 +1,1 @@
-# GRIT
-Measuring Human Perseverance
+# BII

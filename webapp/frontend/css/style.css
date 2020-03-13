@@ -138,7 +138,7 @@ nav {
 }
 
 .qna {
-    margin-bottom:  70px;
+    margin-bottom: 70px;
 }
 
 .q {
@@ -166,11 +166,10 @@ nav {
     padding: 10px 100px 100px 100px;
 }
 
-.row {
-    display: block;
-}
-
 @media only screen and (max-width: 990px) {
+    .row {
+        display: block;
+    }
     .bii {
         display: none;
     }
@@ -178,15 +177,12 @@ nav {
         text-align: center;
         width: 100%;
     }
-
-
     .btns {
         background-image: linear-gradient(180deg, #8632f7 0%, #5754ff 30%, #8e60ff 70%, #9a9dff 100%);
         height: 400px;
         max-width: 70%;
         box-shadow: 0 2px 4px -1px rgba(25, 25, 25, 0.2);
     }
-
     .btns label {
         display: block;
         padding: 20px;
@@ -195,24 +191,19 @@ nav {
         height: 20%;
         border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     }
-
     .btns .btn {
         display: block;
     }
-
     .btns input:checked+.btn {
         background: none;
         box-shadow: none;
     }
-
     .consent {
         padding: 10px;
     }
-
     .question {
         padding: 10px;
     }
-
     .survey {
         margin-top: 25px;
         box-shadow: none;

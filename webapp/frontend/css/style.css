@@ -1,6 +1,8 @@
 body {
     font-family: "Roboto", sans-serif;
     background-color: #FCF8F8;
+    overflow-x: hidden;
+
 }
 
 nav {
@@ -219,36 +221,34 @@ nav {
     }
 }
 
-
 .enter-from-right {
     animation-name: enter-from-right;
-    animation-duration: 1500ms;
+    animation-duration: 500ms;
     animation-fill-mode: forwards;
-  }
-  
-  .leave-to-left {
+}
+
+.leave-to-left {
     animation: leave-to-left;
-    animation-duration: 1500ms;
+    animation-duration: 500ms;
     animation-fill-mode: forwards;
-  }
-  
-  @keyframes enter-from-right {
+}
+
+@keyframes enter-from-right {
     0% {
-      transform: translateX(100vw);
+        opacity: 0;
+        transform: translateX(10vw);
     }
-  
     100% {
-      transform: translateX(0);
+        transform: translateX(0);
     }
-  }
-  
-  @keyframes leave-to-left {
+}
+
+@keyframes leave-to-left {
     0% {
-      transform: translateX(0);
+        transform: translateX(0);
     }
-  
     100% {
-      transform: translateX(-100vw);
+        opacity: 0;
+        transform: translateX(-10vw);
     }
-  }
-  
+}

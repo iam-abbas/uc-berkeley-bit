@@ -74,6 +74,7 @@ submitButton().forEach(function (el) {
   el.addEventListener("change", function (event) {
     setTimeout(function () {
       answers.push(parseInt(el.value))
+      console.log(answers)
       if (!isOnFinalQuestion()) {
         event.preventDefault();
         displayNextQuestion();

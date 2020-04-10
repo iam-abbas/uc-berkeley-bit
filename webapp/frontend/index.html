@@ -29,6 +29,9 @@
         rel="stylesheet">
     <script src="https://kit.fontawesome.com/c4124ecb75.js" crossorigin="anonymous"></script>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
 </head>
 
 <body>
@@ -48,47 +51,46 @@
                         perseverance</span>
                     <p class="consent">
                         All products and/or research created by Project-BIT as part of their enrolment in IEOR 135/290
-                        ​Data-X​, is in the public domain
+                        ​Data-X​, is in the  public domain
                     </p>
                 </p>
-                <section class="qna">
+
+                <form>
                     <div class="qna">
                         <p class="question"><span class="num">1.</span><span class="q">New ideas and projects sometimes
-                                distract me from previous ones.</span>
+                                distract me from previous ones.</span></p>
                         <div class='btns'>
                             <label>
-                                <input name='button-group' type='radio' value='1'>
+                                <input name='button-group' type='radio' value='item'>
                                 <span class='btn first'>Never</span>
                                 </input>
                             </label>
                             <label>
-                                <input name='button-group' type='radio' value='2'>
+                                <input name='button-group' type='radio' value='other-item'>
                                 <span class='btn'>Sometimes</span>
                                 </input>
                             </label>
                             <label>
-                                <input name='button-group' type='radio' value='3'>
+                                <input name='button-group' type='radio' value='other-item'>
                                 <span class='btn'>Often</span>
                                 </input>
                             </label>
                             <label>
-                                <input name='button-group' type='radio' value='4'>
+                                <input name='button-group' type='radio' value='third'>
                                 <span class='btn'>Usually</span>
                                 </input>
                             </label>
                             <label>
-                                <input name='button-group' type='radio' value='5'>
+                                <input name='button-group' type='radio' value='third'>
                                 <span class='btn last'>Always</span>
                                 </input>
                             </label>
                         </div>
-                        </p>
                     </div>
 
-
-
                     <div class="qna">
-                        <p class="question"><span class="num">2.</span><span class="q">Setbacks don’t discourage me. I don’t
+                        <p class="question"><span class="num">2.</span><span class="q">Setbacks don’t discourage me. I
+                                don’t
                                 give up easily.</span></p>
                         <div class='btns'>
                             <label>
@@ -119,10 +121,9 @@
                         </div>
                     </div>
 
-
-
                     <div class="qna">
-                        <p class="question"><span class="num">3.</span><span class="q">I often set a goal but later choose
+                        <p class="question"><span class="num">3.</span><span class="q">I often set a goal but later
+                                choose
                                 to pursue a different one.</span></p>
                         <div class='btns'>
                             <label>
@@ -152,8 +153,6 @@
                             </label>
                         </div>
                     </div>
-
-
 
                     <div class="qna">
                         <p class="question"><span class="num">4.</span><span class="q">I am a hard worker.</span></p>
@@ -186,7 +185,6 @@
                         </div>
                     </div>
 
-
                     <div class="qna">
                         <p class="question"><span class="num">5.</span><span class="q">I have difficulty maintaining my
                                 focus on projects that take more than a few months to complete.</span></p>
@@ -218,10 +216,13 @@
                             </label>
                         </div>
                     </div>
-                </section>
+                </form>
+
             </div>
         </div>
     </div>
+
+        <script src="js/questions.js"></script>
 </body>
 
 </html>

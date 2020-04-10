@@ -1,6 +1,8 @@
 body {
     font-family: "Roboto", sans-serif;
     background-color: #FCF8F8;
+    overflow-x: hidden;
+
 }
 
 nav {
@@ -166,6 +168,14 @@ nav {
     padding: 10px 100px 100px 100px;
 }
 
+.row {
+    display: block;
+}
+
+.hidden {
+    display: none;
+}
+
 @media only screen and (max-width: 990px) {
     .row {
         display: block;
@@ -208,5 +218,37 @@ nav {
         margin-top: 25px;
         box-shadow: none;
         border-radius: 0px;
+    }
+}
+
+.enter-from-right {
+    animation-name: enter-from-right;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+}
+
+.leave-to-left {
+    animation: leave-to-left;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+}
+
+@keyframes enter-from-right {
+    0% {
+        opacity: 0;
+        transform: translateX(10vw);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes leave-to-left {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(-10vw);
     }
 }

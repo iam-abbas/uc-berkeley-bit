@@ -23,7 +23,7 @@ Measuring Human Perseverance
 
 - Please make your own branch and test it on your local machine. Always base your branch of **Dev** not master. If it works then push it to **Dev** and add someone to review it. 
 - If you are asked to review PRs on Dev please check if it works on your local machine as well.
-- If you are adked to review PRs on **master** please test is thorougly before merging.
+- If you are asked to review PRs on **master** please test is thorougly before merging.
 - Remember to delete your branch after you have merged.
 
 ###### Note: Use slack and issues page for reporting issues and bugs.

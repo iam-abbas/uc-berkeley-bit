@@ -14,6 +14,9 @@ function resetCount() {
 
 var answers = []
 var myCounts = []
+var split = [80, 30];
+var splitQ = 30;
+var totalQ = 57;
 
 const numberOfQuestions = document.querySelectorAll(".qna").length;
 const thankyou = document.getElementById("thank-you");
@@ -30,18 +33,29 @@ const showOnlyCurrentQuestion = () => {
   currentQuestion().classList.remove("hidden");
 };
 
+var nowwidth = 0
 const displayNextQuestion = () => {
   myCounts.push(counter)
   console.log(myCounts)
   questionnaire().classList.remove("enter-from-right");
   questionnaire().classList.add("leave-to-left");
+  var currentWidth = 0;
   setTimeout(() => {
     currentQuestionNumber++;
     showOnlyCurrentQuestion();
     currentQuestion().focus();
     questionnaire().classList.remove("leave-to-left");
     questionnaire().classList.add("enter-from-right");
-  }, 1000);
+  }, 500);
+  var width = (document.getElementById("progress").offsetWidth/document.getElementById("progressBar").offsetWidth)*100
+  if(currentQuestionNumber < splitQ) {
+    newwidth = (split[0]/splitQ)
+  } else {
+    newwidth = (split[1]/(totalQ-splitQ))
+  }
+  nowwidth = nowwidth+newwidth;
+  document.getElementById("progress").style.width = nowwidth+"%";
+  console.log(nowwidth)
   resetCount()
 
 };
@@ -75,6 +89,7 @@ submitButton().forEach(function (el) {
     setTimeout(function () {
       answers.push(parseInt(el.value))
       console.log(answers)
+
       if (!isOnFinalQuestion()) {
         event.preventDefault();
         displayNextQuestion();

@@ -1,19 +1,4 @@
-window.onload = function () {
-  setInterval(count, 1000);
-};
-let counter = 0;
-let lasCount = 0;
 
-function count() {
-  counter++;
-}
-
-function resetCount() {
-  counter = 0;
-}
-
-var answers = []
-var myCounts = []
 var split = [80, 30];
 var splitQ = 30;
 var totalQ = 57;
@@ -25,7 +10,7 @@ const currentQuestion = () =>
   document.querySelectorAll(".qna")[currentQuestionNumber];
 
 const questionnaire = () => document.querySelector("form");
-const submitButton = () => document.querySelectorAll('input[type="radio"]');
+const submitButton = () => document.querySelectorAll('#next');
 const showOnlyCurrentQuestion = () => {
   document
     .querySelectorAll(".qna")
@@ -35,8 +20,6 @@ const showOnlyCurrentQuestion = () => {
 
 var nowwidth = 0
 const displayNextQuestion = () => {
-  myCounts.push(counter)
-  console.log(myCounts)
   questionnaire().classList.remove("enter-from-right");
   questionnaire().classList.add("leave-to-left");
   var currentWidth = 0;
@@ -55,41 +38,22 @@ const displayNextQuestion = () => {
   }
   nowwidth = nowwidth+newwidth;
   document.getElementById("progress").style.width = nowwidth+"%";
-  console.log(nowwidth)
-  resetCount()
-
 };
 
 const handleSubmission = () => {
-  myCounts.push(counter)
   questionnaire().classList.remove("enter-from-right");
   questionnaire().classList.add("leave-to-left");
-
-
-  var xhr = new XMLHttpRequest();
-  xhr.open("POST", "http://api.choros.io/bit.php", true);
-  xhr.setRequestHeader('Content-Type', 'application/json');
-  data = []
-  data.push(JSON.stringify(myCounts))
-  data.push(JSON.stringify(answers))
-  xhr.send(JSON.stringify(data));
-  console.log(data)
-
   thankyou.classList.remove("hidden");
   thankyou.classList.remove("leave-to-left");
   thankyou.classList.add("enter-from-right");
-
 }
 
 let currentQuestionNumber = 0;
 showOnlyCurrentQuestion();
 
 submitButton().forEach(function (el) {
-  el.addEventListener("change", function (event) {
+  el.addEventListener("click", function (event) {
     setTimeout(function () {
-      answers.push(parseInt(el.value))
-      console.log(answers)
-
       if (!isOnFinalQuestion()) {
         event.preventDefault();
         displayNextQuestion();

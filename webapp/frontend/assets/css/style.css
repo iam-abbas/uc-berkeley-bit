@@ -2,14 +2,13 @@ body {
     font-family: "Roboto", sans-serif;
     background-color: #FCF8F8;
     overflow-x: hidden;
-
 }
 
 div {
     transition: all 550ms cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-#progressBar{
+#progressBar {
     max-height: 10px;
     position: absolute;
     top: 0.07%;
@@ -21,7 +20,8 @@ div {
     /* border-top-right-radius: 50px;
     border-top-left-radius: 50px; */
 }
-#progress{
+
+#progress {
     width: 0%;
     height: 10px;
     left: 0.2%;
@@ -29,6 +29,7 @@ div {
     border-top-left-radius: 50px; */
     transition: all 550ms cubic-bezier(0.165, 0.84, 0.44, 1);
 }
+
 nav {
     height: 140px;
 }
@@ -201,6 +202,39 @@ nav {
     display: none;
 }
 
+#thank-you {
+    font-size: 36px;
+    font-weight: 500;
+    color: #6488ff;
+}
+
+.text-field {
+    width: 55%;
+    padding: 12px;
+    display: block;
+    margin: auto;
+    border: none;
+    margin-bottom: 20px;
+    text-align: center;
+    box-shadow: 0 3px 1px -1px #6488ff;
+}
+
+.nxt-btn {
+    margin-top: 20px;
+    padding: 10px 40px 10px 40px;
+    background: #6488ff;
+    color: #fff;
+    transition: all 100ms ease-in-out;
+}
+
+.nxt-btn:hover {
+    padding: 10px 60px 10px 60px;
+    color: #fff;
+}
+
+textarea:focus, input:focus {
+    outline: none;
+}
 
 @media only screen and (max-width: 560px) {
     #progressBar {
@@ -210,9 +244,7 @@ nav {
     }
 }
 
-
 @media only screen and (max-width: 990px) {
-
     .row {
         display: block;
     }
@@ -259,13 +291,13 @@ nav {
 
 .enter-from-right {
     animation-name: enter-from-right;
-    animation-duration: 240ms;
+    animation-duration: 300ms;
     animation-fill-mode: forwards;
 }
 
 .leave-to-left {
     animation: leave-to-left;
-    animation-duration: 240ms;
+    animation-duration: 300ms;
     animation-fill-mode: forwards;
 }
 
@@ -287,10 +319,4 @@ nav {
         opacity: 0;
         transform: translateX(-10vw);
     }
-}
-
-#thank-you {
-    font-size: 36px;
-    font-weight: 500;
-    color: #6488ff;
 }

@@ -64,12 +64,20 @@
                 </p>
 
 
-                <form id="myForm">
+                <form id="SurveyForm" autocomplete="off">
                     <div class="qna">
                         <p class="question"><span class="num"></span><span class="q">Enter Your Name</span></p>
-                        <input name="name" type="text">
-                        <span class="btn" class="next" onclick="taptime('Blank')" id="next">Next</span>
+                        <input name="name" class="text-field" type="text">
+                        <span class="btn nxt-btn next" id="next">Next</span>
                     </div>
+
+                    <div class="qna">
+                        <p class="question"><span class="num"></span><span class="q">Enter Your Mail</span></p>
+                        <input name="email" class="text-field" type="text">
+                        <span class="btn nxt-btn next" onclick="taptime('Blank')" id="next">Next</span>
+                    </div>
+
+
                     {% for q in data %}
                     <div class="qna">
                         <p class="question"><span class="num">{{loop.index0 +1}}.</span><span class="q">{{q[0]}}</span>
@@ -128,7 +136,7 @@
                                 </input>
                             </label>
                             <label>
-                                <input id="next" name='Demo1' class="lastone" type='radio' value='3'>
+                                <input id="next" name='Demo1' type='radio' value='3'>
                                 <span class='btn'>Often</span>
                                 </input>
                             </label>
@@ -139,6 +147,99 @@
                             </label>
                             <label>
                                 <input id="next" name='Demo1' type='radio' value='5'>
+                                <span class='btn last'>Always</span>
+                                </input>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="qna">
+                        <p class="question"><span class="num"></span><span class="q">Demo Graphic 2</span>
+                        </p>
+                        <div class='btns'>
+                            <label>
+                                <input id="next" name='Demo2' type='radio' value='1'>
+                                <span class='btn first'>Never</span>
+                                </input>
+                            </label>
+                            <label>
+                                <input id="next" name='Demo2' type='radio' value='2'>
+                                <span class='btn'>Sometimes</span>
+                                </input>
+                            </label>
+                            <label>
+                                <input id="next" name='Demo2' type='radio' value='3'>
+                                <span class='btn'>Often</span>
+                                </input>
+                            </label>
+                            <label>
+                                <input id="next" name='Demo2' type='radio' value='4'>
+                                <span class='btn'>Usually</span>
+                                </input>
+                            </label>
+                            <label>
+                                <input id="next" name='Demo2' type='radio' value='5'>
+                                <span class='btn last'>Always</span>
+                                </input>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="qna">
+                        <p class="question"><span class="num"></span><span class="q">Demo Graphic 3</span>
+                        </p>
+                        <div class='btns'>
+                            <label>
+                                <input id="next" name='Demo3' type='radio' value='1'>
+                                <span class='btn first'>Never</span>
+                                </input>
+                            </label>
+                            <label>
+                                <input id="next" name='Demo3' type='radio' value='2'>
+                                <span class='btn'>Sometimes</span>
+                                </input>
+                            </label>
+                            <label>
+                                <input id="next" name='Demo3' type='radio' value='3'>
+                                <span class='btn'>Often</span>
+                                </input>
+                            </label>
+                            <label>
+                                <input id="next" name='Demo3' type='radio' value='4'>
+                                <span class='btn'>Usually</span>
+                                </input>
+                            </label>
+                            <label>
+                                <input id="next" name='Demo3' type='radio' value='5'>
+                                <span class='btn last'>Always</span>
+                                </input>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="qna">
+                        <p class="question"><span class="num"></span><span class="q">Demo Graphic 4</span>
+                        </p>
+                        <div class='btns'>
+                            <label>
+                                <input id="next" name='Demo4' class="lastone" type='radio' value='1'>
+                                <span class='btn first'>Never</span>
+                                </input>
+                            </label>
+                            <label>
+                                <input id="next" name='Demo4' class="lastone" type='radio' value='2'>
+                                <span class='btn'>Sometimes</span>
+                                </input>
+                            </label>
+                            <label>
+                                <input id="next" name='Demo4' class="lastone" type='radio' value='3'>
+                                <span class='btn'>Often</span>
+                                </input>
+                            </label>
+                            <label>
+                                <input id="next" name='Demo4' class="lastone" type='radio' value='4'>
+                                <span class='btn'>Usually</span>
+                                </input>
+                            </label>
+                            <label>
+                                <input id="next" name='Demo4' class="lastone" type='radio' value='5'>
                                 <span class='btn last'>Always</span>
                                 </input>
                             </label>

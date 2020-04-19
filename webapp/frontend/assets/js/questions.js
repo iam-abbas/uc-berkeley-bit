@@ -1,7 +1,6 @@
-
-var split = [80, 30];
-var splitQ = 30;
-var totalQ = 57;
+var split = [80, 20];
+var splitQ = 25;
+var totalQ = 43;
 
 const numberOfQuestions = document.querySelectorAll(".qna").length;
 const thankyou = document.getElementById("thank-you");
@@ -10,15 +9,15 @@ const currentQuestion = () =>
   document.querySelectorAll(".qna")[currentQuestionNumber];
 
 const questionnaire = () => document.querySelector("form");
-const submitButton = () => document.querySelectorAll('#next');
+const submitButton = () => document.querySelectorAll("#next");
 const showOnlyCurrentQuestion = () => {
   document
     .querySelectorAll(".qna")
-    .forEach(question => question.classList.add("hidden"));
+    .forEach((question) => question.classList.add("hidden"));
   currentQuestion().classList.remove("hidden");
 };
 
-var nowwidth = 0
+var nowwidth = 0;
 const displayNextQuestion = () => {
   questionnaire().classList.remove("enter-from-right");
   questionnaire().classList.add("leave-to-left");
@@ -29,15 +28,18 @@ const displayNextQuestion = () => {
     currentQuestion().focus();
     questionnaire().classList.remove("leave-to-left");
     questionnaire().classList.add("enter-from-right");
-  }, 500);
-  var width = (document.getElementById("progress").offsetWidth/document.getElementById("progressBar").offsetWidth)*100
-  if(currentQuestionNumber < splitQ) {
-    newwidth = (split[0]/splitQ)
+  }, 600);
+  var width =
+    (document.getElementById("progress").offsetWidth /
+      document.getElementById("progressBar").offsetWidth) *
+    100;
+  if (currentQuestionNumber < splitQ) {
+    newwidth = split[0] / splitQ;
   } else {
-    newwidth = (split[1]/(totalQ-splitQ))
+    newwidth = split[1] / (totalQ - splitQ);
   }
-  nowwidth = nowwidth+newwidth;
-  document.getElementById("progress").style.width = nowwidth+"%";
+  nowwidth = nowwidth + newwidth;
+  document.getElementById("progress").style.width = nowwidth + "%";
 };
 
 const handleSubmission = () => {
@@ -46,7 +48,7 @@ const handleSubmission = () => {
   thankyou.classList.remove("hidden");
   thankyou.classList.remove("leave-to-left");
   thankyou.classList.add("enter-from-right");
-}
+};
 
 let currentQuestionNumber = 0;
 showOnlyCurrentQuestion();
@@ -65,5 +67,3 @@ submitButton().forEach(function (el) {
     }, 500);
   });
 });
-
-

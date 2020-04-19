@@ -11,6 +11,29 @@ function taptime(qdata) {
   }
 }
 
+function getFormData($form){
+  var unindexed_array = $form.serializeArray();
+  var indexed_array = {};
+
+  $.map(unindexed_array, function(n, i){
+      indexed_array[n['name']] = n['value'];
+  });
+
+  return indexed_array;
+}
 
 
-console.log(timeobj)
+$('.lastone').click( function() {
+  var sendData = JSON.stringify([getFormData($('#myForm')), timeobj]);
+  console.log(sendData)
+  $.ajax({
+      url: '/post',
+      type: 'post',
+      contentType:"application/json",
+      dataType: 'json',
+      data:  sendData,
+      success: function(data) {
+                 console.log(data)
+               }
+  });
+});

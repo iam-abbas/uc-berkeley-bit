@@ -288,3 +288,9 @@ nav {
         transform: translateX(-10vw);
     }
 }
+
+#thank-you {
+    font-size: 36px;
+    font-weight: 500;
+    color: #6488ff;
+}

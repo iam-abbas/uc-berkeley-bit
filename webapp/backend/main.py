@@ -12,6 +12,9 @@ app.config['MYSQL_PORT'] = 3333
 
 mysql = MySQL(app)
 
+@app.route('/')
+def index_page():
+    return "Hi.."
 
 @app.route('/post', methods=['POST'])
 def post_data():

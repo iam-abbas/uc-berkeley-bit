@@ -17,13 +17,14 @@ def hello_world():
     if request.method == "POST":
         cur = mysql.connection.cursor()
         data = request.get_json()
-        stmt = "INSERT INTO `bit-response` (`name`, "
-        for i in range(1, 2):
+        stmt = "INSERT INTO `bit-response` (`name`, `email`, "
+        for i in range(1, 39):
             stmt += f"`Q{i}-Ans`, `Q{i}-Time`, "
-        stmt += f"`Demo1`) VALUES ( '{data[0]['name']}', "
-        for i in range(1, 2):
+        stmt += f"`Demo1`, `Demo2`, `Demo3`, `Demo4` ) VALUES ( '{data[0]['name']}', '{data[0]['email']}', "
+        for i in range(1, 39):
             stmt += f"'{data[0]['Q'+str(i)+'-Ans']}', '{data[1]['Q'+str(i)+'-Time']}', "
-        stmt += f"'{data[0]['Demo1']}')"
+        stmt += f"'{data[0]['Demo1']}', '{data[0]['Demo2']}', '{data[0]['Demo3']}', '{data[0]['Demo4']}')"
+        print(stmt)
         cur.execute(stmt)
         mysql.connection.commit()
         cur.close()
@@ -32,7 +33,7 @@ def hello_world():
 @app.route('/survey')
 def survey():
     cur = mysql.connection.cursor()
-    cur.execute("SELECT `question` FROM `bit-questions`")
+    cur.execute("SELECT `question` FROM `bit-questions` ")
     data = cur.fetchall()
     return render_template('index.html', data=data)
 

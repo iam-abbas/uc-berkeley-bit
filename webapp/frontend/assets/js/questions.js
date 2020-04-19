@@ -29,7 +29,7 @@ const displayNextQuestion = () => {
     currentQuestion().focus();
     questionnaire().classList.remove("leave-to-left");
     questionnaire().classList.add("enter-from-right");
-  }, 500);
+  }, 1000);
   var width = (document.getElementById("progress").offsetWidth/document.getElementById("progressBar").offsetWidth)*100
   if(currentQuestionNumber < splitQ) {
     newwidth = (split[0]/splitQ)

@@ -2,6 +2,19 @@
 Measuring Human Perseverance
 
 
+# Usage Guidelines
+
+### Dcoker
+- Download and install docker.
+- Edit setup.sh ***line 5*** add your *absolute path* 
+
+#### If you are using windows.
+- Download [Hyper](https://hyper.is/)
+
+### How to run?
+- just run setup.sh
+- the survey will be available at *localhost/survey*.
+
 
 # Contribution Guidelines
 

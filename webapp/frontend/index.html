@@ -20,7 +20,7 @@
         crossorigin="anonymous"></script>
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 
     <!-- Fonts -->
     <link
@@ -37,10 +37,10 @@
 <body>
     <nav>
         <div class="logo">
-            <img src="images/logo.png" style="height: 60px">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" style="height: 60px">
         </div>
         <div class="bii">
-            <img src="images/head.png" style="height: 170px">
+            <img src="{{ url_for('static', filename='images/head.png') }}" style="height: 170px">
         </div>
     </nav>
     <div class="container">
@@ -249,8 +249,8 @@
             </div>
         </div>
     </div>
-    <script src="assets/js/questions.js"></script>
-    <script src="assets/js/jquery.js"></script>
+    <script src="{{ url_for('static', filename='js/questions.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
 
 </body>
 

@@ -1,7 +1,8 @@
 from flask import Flask, request, render_template, jsonify
 from flask_mysqldb import MySQL
 
-app = Flask(__name__,  template_folder='../frontend')
+app = Flask(__name__,  template_folder='../frontend',
+            static_folder="../frontend/assets/")
 
 app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = 'password'

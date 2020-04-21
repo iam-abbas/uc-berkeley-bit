@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template, jsonify
+from flask import Flask, request, render_template, jsonify, redirect
 from flask_mysqldb import MySQL
 
 application = app = Flask(__name__,  template_folder='frontend',
@@ -13,7 +13,7 @@ mysql = MySQL(app)
 
 @app.route('/')
 def index_page():
-    return "Go to survey. <a href='/survey'>Survey</a>"
+    return redirect("/survey")
 
 @app.route('/post', methods=['POST'])
 def post_data():

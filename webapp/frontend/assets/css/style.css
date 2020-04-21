@@ -216,7 +216,8 @@ nav {
     border: none;
     margin-bottom: 20px;
     text-align: center;
-    box-shadow: 0 3px 1px -1px #6488ff;
+    border-bottom: 1px solid #6488ff;
+    box-shadow: 0 2px 1px -1px #6488ff;
 }
 
 .nxt-btn {

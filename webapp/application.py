@@ -1,19 +1,19 @@
 from flask import Flask, request, render_template, jsonify
 from flask_mysqldb import MySQL
 
-app = Flask(__name__,  template_folder='../frontend',
-            static_folder="../frontend/assets/")
+application = app = Flask(__name__,  template_folder='frontend',
+            static_folder="frontend/assets/")
 
 app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = 'password'
+app.config['MYSQL_PASSWORD'] = 'projectbit'
 app.config['MYSQL_DB'] = 'bit-db'
-app.config['MYSQL_HOST'] = 'bit-db'
+app.config['MYSQL_HOST'] = 'projectbit.cyhengy6zww6.us-west-2.rds.amazonaws.com'
 
 mysql = MySQL(app)
 
 @app.route('/')
 def index_page():
-    return "Hi.."
+    return "Go to survey. <a href='/survey'>Survey</a>"
 
 @app.route('/post', methods=['POST'])
 def post_data():
@@ -42,4 +42,4 @@ def survey():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, threaded=True, debug=True)
+    app.run(host='0.0.0.0')

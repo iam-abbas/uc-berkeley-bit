@@ -4,17 +4,17 @@ Measuring Human Perseverance
 
 # Usage Guidelines
 
-### Dcoker
-- Download and install docker.
-- Edit setup.sh ***line 5*** add your *absolute path* 
+### Download Modules
+- ```pip install -r requirements.txt```
+##### For Windows
+- Windows doesn't have a module for mysqlclient. So before you you install `requirements.txt`. Execute the following command in `\webapp`.
+- ``` pip install wheel/mysqlclient-1.4.6-cp38-cp38-win32.whl```
 
-#### If you are using windows.
-- Download [Hyper](https://hyper.is/)
+### Run on localhost.
 
-### How to run?
-- just run setup.sh
-- the survey will be available at *localhost/survey*.
-
+- Now just run application.py with:
+- ```python application.py```
+- You should be able to use the application on `localhost:5000`
 
 # Contribution Guidelines
 

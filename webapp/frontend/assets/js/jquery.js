@@ -41,7 +41,7 @@ var prevEmail
 
 function validateName(name) {
     if (name.length == 0) {
-        return "No name entered";
+        return "no-name";
     }
     return null;
 }
@@ -52,12 +52,12 @@ function validateEmail(sEmail) {
   if(!sEmail.match(reEmail)) {
     if (sEmail.length == 0) {
         //alert("No email entered");
-        return "No email entered";
+        return "no-email";
     }
     else {
         //prevEmail = sEmail
         //alert("Invalid email address");
-        return "Invalid email address";
+        return "inval-email";
     }
     //setTimeout( currentQuestion().getElementsByTagName("input")[0].focus(), 100 )
     //return false;

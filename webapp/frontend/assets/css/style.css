@@ -220,6 +220,19 @@ nav {
     box-shadow: 0 2px 1px -1px #6488ff;
 }
 
+.valMsg {
+    width: 55%;
+    padding: 12px;
+    display: block;
+    margin: auto;
+    border: none;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 14px;
+    color: #FFF;
+    background: #5754ff;
+}
+
 .nxt-btn {
     margin-top: 20px;
     padding: 10px 40px 10px 40px;

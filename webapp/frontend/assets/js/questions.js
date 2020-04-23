@@ -10,34 +10,49 @@ const currentQuestion = () =>
 
 const questionnaire = () => document.querySelector("form");
 const submitButton = () => document.querySelectorAll("#next");
+
+const hideValMsg = () => {
+    //alert(document.querySelectorAll(".valMsg"));
+    var valMsgs = currentQuestion().getElementsByClassName("valMsg");
+    for (let i=0; i<valMsgs.length; i++) {
+        valMsgs[i].style.display="none";
+    }
+}
+
 const showOnlyCurrentQuestion = () => {
   document
     .querySelectorAll(".qna")
     .forEach((question) => question.classList.add("hidden"));
   currentQuestion().classList.remove("hidden");
+  hideValMsg();
   currentQuestion().getElementsByTagName("input")[0].focus();
 };
+
+const unhideValMsg = (msg) => {
+    var valMsgs = currentQuestion().getElementsByClassName(msg);
+    for (let i=0; i<valMsgs.length; i++) {
+        valMsgs[i].style.display="block";
+    }
+}
+
+
 
 var nowwidth = 0;
 var valMsg
 const displayNextQuestion = () => {
+  hideValMsg();
   if (currentQuestion().getElementsByTagName("input")[0].classList.contains("text-field")) {
     //alert(currentQuestion().getElementsByTagName("input")[0].name);
     if (currentQuestion().getElementsByTagName("input")[0].name == "name") {
-        valMsg = validateName( currentQuestion().getElementsByTagName("input")[0].value )
-        if ( valMsg != null ) {
-            alert(valMsg);
-            valMsg = null;
-            return;
-        }
+        valMsg = validateName( currentQuestion().getElementsByTagName("input")[0].value );
     }
     else if (currentQuestion().getElementsByTagName("input")[0].name == "email") {
-        valMsg = validateEmail( currentQuestion().getElementsByTagName("input")[0].value )
-        if ( valMsg != null ) {
-            alert(valMsg);
-            valMsg = null;
-            return;
-        }
+        valMsg = validateEmail( currentQuestion().getElementsByTagName("input")[0].value );
+    }
+    if ( valMsg != null ) {
+        unhideValMsg(valMsg);
+        valMsg = null;
+        return;
     }
   }
   questionnaire().classList.remove("enter-from-right");

@@ -37,17 +37,30 @@ $(".lastone").click(function () {
   });
 });
 
+var prevEmail
+
+function validateName(name) {
+    if (name.length == 0) {
+        return "No name entered";
+    }
+    return null;
+}
+
 function validateEmail(sEmail) {
   var reEmail = /^(?:[\w\!\#\$\%\&\'\*\+\-\/\=\?\^\`\{\|\}\~]+\.)*[\w\!\#\$\%\&\'\*\+\-\/\=\?\^\`\{\|\}\~]+@(?:(?:(?:[a-zA-Z0-9](?:[a-zA-Z0-9\-](?!\.)){0,61}[a-zA-Z0-9]?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9\-](?!$)){0,61}[a-zA-Z0-9]?)|(?:\[(?:(?:[01]?\d{1,2}|2[0-4]\d|25[0-5])\.){3}(?:[01]?\d{1,2}|2[0-4]\d|25[0-5])\]))$/;
 
   if(!sEmail.match(reEmail)) {
     if (sEmail.length == 0) {
-        alert("No email entered");
+        //alert("No email entered");
+        return "No email entered";
     }
     else {
-        alert("Invalid email address");
+        //prevEmail = sEmail
+        //alert("Invalid email address");
+        return "Invalid email address";
     }
-    return false;
+    //setTimeout( currentQuestion().getElementsByTagName("input")[0].focus(), 100 )
+    //return false;
   }
-  return true;
+  return null;
 }

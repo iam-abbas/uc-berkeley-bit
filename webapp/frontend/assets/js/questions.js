@@ -15,17 +15,37 @@ const showOnlyCurrentQuestion = () => {
     .querySelectorAll(".qna")
     .forEach((question) => question.classList.add("hidden"));
   currentQuestion().classList.remove("hidden");
+  currentQuestion().getElementsByTagName("input")[0].focus();
 };
 
 var nowwidth = 0;
+var valMsg
 const displayNextQuestion = () => {
+  if (currentQuestion().getElementsByTagName("input")[0].classList.contains("text-field")) {
+    //alert(currentQuestion().getElementsByTagName("input")[0].name);
+    if (currentQuestion().getElementsByTagName("input")[0].name == "name") {
+        valMsg = validateName( currentQuestion().getElementsByTagName("input")[0].value )
+        if ( valMsg != null ) {
+            alert(valMsg);
+            valMsg = null;
+            return;
+        }
+    }
+    else if (currentQuestion().getElementsByTagName("input")[0].name == "email") {
+        valMsg = validateEmail( currentQuestion().getElementsByTagName("input")[0].value )
+        if ( valMsg != null ) {
+            alert(valMsg);
+            valMsg = null;
+            return;
+        }
+    }
+  }
   questionnaire().classList.remove("enter-from-right");
   questionnaire().classList.add("leave-to-left");
   var currentWidth = 0;
   setTimeout(() => {
     currentQuestionNumber++;
     showOnlyCurrentQuestion();
-    currentQuestion().focus();
     questionnaire().classList.remove("leave-to-left");
     questionnaire().classList.add("enter-from-right");
   }, 600);
@@ -40,6 +60,7 @@ const displayNextQuestion = () => {
   }
   nowwidth = nowwidth + newwidth;
   document.getElementById("progress").style.width = nowwidth + "%";
+
 };
 
 const handleSubmission = () => {

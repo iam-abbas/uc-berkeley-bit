@@ -12,11 +12,11 @@ const questionnaire = () => document.querySelector("form");
 const submitButton = () => document.querySelectorAll("#next");
 
 const hideValMsg = () => {
-    //alert(document.querySelectorAll(".valMsg"));
-    var valMsgs = currentQuestion().getElementsByClassName("valMsg");
-    for (let i=0; i<valMsgs.length; i++) {
-        valMsgs[i].style.display="none";
-    }
+  //alert(document.querySelectorAll(".valMsg"));
+  var valMsgs = currentQuestion().getElementsByClassName("valMsg");
+  for (let i = 0; i < valMsgs.length; i++) {
+    valMsgs[i].style.display = "none";
+  }
 }
 
 const showOnlyCurrentQuestion = () => {
@@ -29,10 +29,10 @@ const showOnlyCurrentQuestion = () => {
 };
 
 const unhideValMsg = (msg) => {
-    var valMsgs = currentQuestion().getElementsByClassName(msg);
-    for (let i=0; i<valMsgs.length; i++) {
-        valMsgs[i].style.display="block";
-    }
+  var valMsgs = currentQuestion().getElementsByClassName(msg);
+  for (let i = 0; i < valMsgs.length; i++) {
+    valMsgs[i].style.display = "block";
+  }
 }
 
 
@@ -44,15 +44,14 @@ const displayNextQuestion = () => {
   if (currentQuestion().getElementsByTagName("input")[0].classList.contains("text-field")) {
     //alert(currentQuestion().getElementsByTagName("input")[0].name);
     if (currentQuestion().getElementsByTagName("input")[0].name == "name") {
-        valMsg = validateName( currentQuestion().getElementsByTagName("input")[0].value );
+      valMsg = validateName(currentQuestion().getElementsByTagName("input")[0].value);
+    } else if (currentQuestion().getElementsByTagName("input")[0].name == "email") {
+      valMsg = validateEmail(currentQuestion().getElementsByTagName("input")[0].value);
     }
-    else if (currentQuestion().getElementsByTagName("input")[0].name == "email") {
-        valMsg = validateEmail( currentQuestion().getElementsByTagName("input")[0].value );
-    }
-    if ( valMsg != null ) {
-        unhideValMsg(valMsg);
-        valMsg = null;
-        return;
+    if (valMsg != null) {
+      unhideValMsg(valMsg);
+      valMsg = null;
+      return;
     }
   }
   questionnaire().classList.remove("enter-from-right");
@@ -89,9 +88,9 @@ const handleSubmission = () => {
 let currentQuestionNumber = 0;
 showOnlyCurrentQuestion();
 
-submitButton().forEach(function (el) {
-  el.addEventListener("click", function (event) {
-    setTimeout(function () {
+submitButton().forEach(function(el) {
+  el.addEventListener("click", function(event) {
+    setTimeout(function() {
       if (!isOnFinalQuestion()) {
         event.preventDefault();
         displayNextQuestion();

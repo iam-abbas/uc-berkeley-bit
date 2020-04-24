@@ -15,6 +15,10 @@ mysql = MySQL(app)
 def index_page():
     return redirect("/survey")
 
+@app.route('/results.html')
+def results_page():
+    return redirect("/results")
+
 @app.route('/post', methods=['POST'])
 def post_data():
     if request.method == "POST":
@@ -39,6 +43,10 @@ def survey():
     cur.execute("SELECT `question` FROM `bit-questions` ")
     data = cur.fetchall()
     return render_template('index.html', data=data)
+
+@app.route('/results')
+def results():
+    return render_template('results.html')
 
 
 if __name__ == '__main__':

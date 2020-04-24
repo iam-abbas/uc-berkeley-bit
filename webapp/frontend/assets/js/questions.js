@@ -9,6 +9,7 @@ const currentQuestion = () =>
   document.querySelectorAll(".qna")[currentQuestionNumber];
 
 const questionnaire = () => document.querySelector("form");
+const agreeButton = () => document.querySelector("#take-survey");
 const submitButton = () => document.querySelectorAll("#next");
 
 const hideValMsg = () => {
@@ -84,6 +85,12 @@ const handleSubmission = () => {
   thankyou.classList.remove("leave-to-left");
   thankyou.classList.add("enter-from-right");
 };
+
+agreeButton().addEventListener("click", function(event) {
+    document.querySelectorAll(".entry")
+        .forEach((stmt) => stmt.classList.add("hidden"));
+    document.querySelector("#SurveyForm").classList.remove("hidden");
+})
 
 let currentQuestionNumber = 0;
 showOnlyCurrentQuestion();

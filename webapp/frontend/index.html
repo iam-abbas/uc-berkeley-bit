@@ -23,7 +23,8 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css?family=Roboto:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap"
         rel="stylesheet">
     <script src="https://kit.fontawesome.com/c4124ecb75.js" crossorigin="anonymous"></script>
 
@@ -63,12 +64,14 @@
                         Your participation in this survey is voluntary.
                         You may choose not to participate.
                         If you decide to participate in this research survey, you may withdraw at any time.
-                        If you decide not to participate in this study or if you withdrawl from participating at any time, you will not be penalized.
+                        If you decide not to participate in this study or if you withdrawl from participating at any
+                        time, you will not be penalized.
                     </p>
                     <p class="agree">
                         We will do our best to keep your information confidential.
                         All data is stored in a password protected electronic format.
-                        The results of this study will be used for scholarly purposes only and may be shared with Berkeley University of California representatives.
+                        The results of this study will be used for scholarly purposes only and may be shared with
+                        Berkeley University of California representatives.
                     </p>
                     <p class="agree">
                         By clicking "Take This Survey", you agree that:
@@ -82,7 +85,7 @@
                     Thank You for filling out the BIT Survey.
                 </p>
 
-                <form class="hidden" id="SurveyForm" autocomplete="off">
+                <form class="hidden sForm" id="SurveyForm" autocomplete="off">
                     <div class="qna">
                         <p class="question">
                             <span class="num"></span>
@@ -102,7 +105,8 @@
 
                         <input name="email" class="text-field" type="text">
                         <span class="valMsg no-email" id="no-email">Please enter your email.</span>
-                        <span class="valMsg inval-email" id="inval-email">This email is invalid. Please re-enter your email.</span>
+                        <span class="valMsg inval-email" id="inval-email">This email is invalid. Please re-enter your
+                            email.</span>
                         <span class="btn nxt-btn next" onclick="taptime('Blank')" id="next">Next</span>
                     </div>
 
@@ -117,35 +121,35 @@
                             <label>
                                 <input id="next" onclick="taptime('Q{{loop.index0 +1}}-Time')"
                                     name='Q{{loop.index0+1}}-Ans' type='radio' value='1'>
-                                    <span class='btn first'>Strongly Disagree</span>
+                                <span class='btn first'>Strongly Disagree</span>
                                 </input>
                             </label>
 
                             <label>
                                 <input id="next" onclick="taptime('Q{{loop.index0 +1}}-Time')"
                                     name='Q{{loop.index0+1}}-Ans' type='radio' value='2'>
-                                    <span class='btn'>Disagree</span>
+                                <span class='btn'>Disagree</span>
                                 </input>
                             </label>
 
                             <label>
                                 <input id="next" onclick="taptime('Q{{loop.index0 +1}}-Time')"
                                     name='Q{{loop.index0+1}}-Ans' type='radio' value='3'>
-                                    <span class='btn'>Neutral</span>
+                                <span class='btn'>Neutral</span>
                                 </input>
                             </label>
 
                             <label>
                                 <input id="next" onclick="taptime('Q{{loop.index0 +1}}-Time')"
                                     name='Q{{loop.index0+1}}-Ans' type='radio' value='4'>
-                                    <span class='btn'>Agree</span>
+                                <span class='btn'>Agree</span>
                                 </input>
                             </label>
 
                             <label>
                                 <input id="next" onclick="taptime('Q{{loop.index0 +1}}-Time')"
                                     name='Q{{loop.index0+1}}-Ans' type='radio' value='5'>
-                                    <span class='btn last'>Strongly Agree</span>
+                                <span class='btn last'>Strongly Agree</span>
                                 </input>
                             </label>
                         </div>
@@ -161,31 +165,31 @@
                         <div class='btns'>
                             <label>
                                 <input id="next" name='Demo1' type='radio' value='1'>
-                                    <span class='btn first' style="font-size: 15px;" >Still in school</span>
+                                <span class='btn first' style="font-size: 15px;">Still in school</span>
                                 </input>
                             </label>
 
                             <label>
                                 <input id="next" name='Demo1' type='radio' value='2'>
-                                    <span class='btn' style="font-size: 15px;">Recently started career</span>
+                                <span class='btn' style="font-size: 15px;">Recently started career</span>
                                 </input>
                             </label>
 
                             <label>
                                 <input id="next" name='Demo1' type='radio' value='3'>
-                                    <span class='btn' style="font-size: 15px;">Middle of career </span>
+                                <span class='btn' style="font-size: 15px;">Middle of career </span>
                                 </input>
                             </label>
 
                             <label>
                                 <input id="next" name='Demo1' type='radio' value='4'>
-                                    <span class='btn' style="font-size: 15px;">Well into career</span>
+                                <span class='btn' style="font-size: 15px;">Well into career</span>
                                 </input>
                             </label>
 
                             <label>
                                 <input id="next" name='Demo1' type='radio' value='5'>
-                                    <span class='btn last' style="font-size: 15px;">None of these</span>
+                                <span class='btn last' style="font-size: 15px;">None of these</span>
                                 </input>
                             </label>
                         </div>
@@ -200,31 +204,31 @@
                         <div class='btns'>
                             <label>
                                 <input id="next" name='Demo2' type='radio' value='1'>
-                                    <span class='btn first' style="font-size: 15px;">High School Degree (or less)</span>
+                                <span class='btn first' style="font-size: 15px;">High School Degree (or less)</span>
                                 </input>
                             </label>
 
                             <label>
                                 <input id="next" name='Demo2' type='radio' value='2'>
-                                    <span class='btn' style="font-size: 15px;">Some college </span>
+                                <span class='btn' style="font-size: 15px;">Some college </span>
                                 </input>
                             </label>
 
                             <label>
                                 <input id="next" name='Demo2' type='radio' value='3'>
-                                    <span class='btn' style="font-size: 15px;">Bachelors</span>
+                                <span class='btn' style="font-size: 15px;">Bachelors</span>
                                 </input>
                             </label>
 
                             <label>
                                 <input id="next" name='Demo2' type='radio' value='4'>
-                                    <span class='btn' style="font-size: 15px;">Masters (or similar)</span>
+                                <span class='btn' style="font-size: 15px;">Masters (or similar)</span>
                                 </input>
                             </label>
 
                             <label>
                                 <input id="next" name='Demo2' type='radio' value='5'>
-                                    <span class='btn last' style="font-size: 15px;">PhD (or beyond)</span>
+                                <span class='btn last' style="font-size: 15px;">PhD (or beyond)</span>
                                 </input>
                             </label>
                         </div>
@@ -239,31 +243,31 @@
                         <div class='btns'>
                             <label>
                                 <input id="next" name='Demo3' type='radio' value='1'>
-                                    <span class='btn first' style="font-size: 15px;">Female</span>
+                                <span class='btn first' style="font-size: 15px;">Female</span>
                                 </input>
                             </label>
 
                             <label>
                                 <input id="next" name='Demo3' type='radio' value='2'>
-                                    <span class='btn' style="font-size: 15px;">Male</span>
+                                <span class='btn' style="font-size: 15px;">Male</span>
                                 </input>
                             </label>
 
                             <label>
                                 <input id="next" name='Demo3' type='radio' value='3'>
-                                    <span class='btn' style="font-size: 15px;">Non-binary</span>
+                                <span class='btn' style="font-size: 15px;">Non-binary</span>
                                 </input>
                             </label>
 
                             <label>
                                 <input id="next" name='Demo3' type='radio' value='4'>
-                                    <span class='btn' style="font-size: 15px;">Chose not to disclose</span>
+                                <span class='btn' style="font-size: 15px;">Chose not to disclose</span>
                                 </input>
                             </label>
 
                             <label>
                                 <input id="next" name='Demo3' type='radio' value='4'>
-                                    <span class='btn last' style="font-size: 15px;">other</span>
+                                <span class='btn last' style="font-size: 15px;">other</span>
                                 </input>
                             </label>
                         </div>
@@ -278,31 +282,32 @@
                         <div class='btns'>
                             <label>
                                 <input id="next" name='Demo4' class="lastone" type='radio' value='1'>
-                                    <span class='btn first' style="font-size: 15px;">White</span>
+                                <span class='btn first' style="font-size: 15px;">White</span>
                                 </input>
                             </label>
 
                             <label>
                                 <input id="next" name='Demo4' class="lastone" type='radio' value='2'>
-                                    <span class='btn' style="font-size: 15px;">Black/African American</span>
+                                <span class='btn' style="font-size: 15px;">Black/African American</span>
                                 </input>
                             </label>
 
                             <label>
                                 <input id="next" name='Demo4' class="lastone" type='radio' value='3'>
-                                    <span class='btn' style="font-size: 15px;">American Indian/Alaska Native</span>
+                                <span class='btn' style="font-size: 15px;">American Indian/Alaska Native</span>
                                 </input>
                             </label>
 
                             <label>
                                 <input id="next" name='Demo4' class="lastone" type='radio' value='4'>
-                                    <span class='btn' style="font-size: 15px;">Asian</span>
+                                <span class='btn' style="font-size: 15px;">Asian</span>
                                 </input>
                             </label>
 
                             <label>
                                 <input id="next" name='Demo4' class="lastone" type='radio' value='5'>
-                                    <span class='btn last' style="font-size: 15px;">Native Hawaiian/Other Pacific Islander</span>
+                                <span class='btn last' style="font-size: 15px;">Native Hawaiian/Other Pacific
+                                    Islander</span>
                                 </input>
                             </label>
                         </div>

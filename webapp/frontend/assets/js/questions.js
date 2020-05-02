@@ -18,7 +18,7 @@ const hideValMsg = () => {
   for (let i = 0; i < valMsgs.length; i++) {
     valMsgs[i].style.display = "none";
   }
-}
+};
 
 const showOnlyCurrentQuestion = () => {
   document
@@ -34,20 +34,28 @@ const unhideValMsg = (msg) => {
   for (let i = 0; i < valMsgs.length; i++) {
     valMsgs[i].style.display = "block";
   }
-}
-
-
+};
 
 var nowwidth = 0;
-var valMsg
+var valMsg;
 const displayNextQuestion = () => {
   hideValMsg();
-  if (currentQuestion().getElementsByTagName("input")[0].classList.contains("text-field")) {
+  if (
+    currentQuestion()
+      .getElementsByTagName("input")[0]
+      .classList.contains("text-field")
+  ) {
     //alert(currentQuestion().getElementsByTagName("input")[0].name);
     if (currentQuestion().getElementsByTagName("input")[0].name == "name") {
-      valMsg = validateName(currentQuestion().getElementsByTagName("input")[0].value);
-    } else if (currentQuestion().getElementsByTagName("input")[0].name == "email") {
-      valMsg = validateEmail(currentQuestion().getElementsByTagName("input")[0].value);
+      valMsg = validateName(
+        currentQuestion().getElementsByTagName("input")[0].value
+      );
+    } else if (
+      currentQuestion().getElementsByTagName("input")[0].name == "email"
+    ) {
+      valMsg = validateEmail(
+        currentQuestion().getElementsByTagName("input")[0].value
+      );
     }
     if (valMsg != null) {
       unhideValMsg(valMsg);
@@ -75,7 +83,6 @@ const displayNextQuestion = () => {
   }
   nowwidth = nowwidth + newwidth;
   document.getElementById("progress").style.width = nowwidth + "%";
-
 };
 
 const handleSubmission = () => {
@@ -86,18 +93,19 @@ const handleSubmission = () => {
   thankyou.classList.add("enter-from-right");
 };
 
-agreeButton().addEventListener("click", function(event) {
-    document.querySelectorAll(".entry")
-        .forEach((stmt) => stmt.classList.add("hidden"));
-    document.querySelector("#SurveyForm").classList.remove("hidden");
-})
+agreeButton().addEventListener("click", function (event) {
+  document
+    .querySelectorAll(".entry")
+    .forEach((stmt) => stmt.classList.add("hidden"));
+  document.querySelector("#SurveyForm").classList.remove("hidden");
+});
 
 let currentQuestionNumber = 0;
 showOnlyCurrentQuestion();
 
-submitButton().forEach(function(el) {
-  el.addEventListener("click", function(event) {
-    setTimeout(function() {
+submitButton().forEach(function (el) {
+  el.addEventListener("click", function (event) {
+    setTimeout(function () {
       if (!isOnFinalQuestion()) {
         event.preventDefault();
         displayNextQuestion();

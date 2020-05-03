@@ -1,6 +1,6 @@
 from flask import Flask, request, render_template, jsonify, redirect
 from flask_mysqldb import MySQL
-
+from score import scoring
 application = app = Flask(__name__,  template_folder='frontend',
             static_folder="frontend/assets/")
 
@@ -34,6 +34,12 @@ def post_data():
         cur.execute(stmt)
         mysql.connection.commit()
         cur.close()
+        cur = mysql.connection.cursor()
+        scores = scoring(cur)
+        scores.addScores()
+        mysql.connection.commit()
+        cur.close()
+
     return jsonify({"success": True})
 
 

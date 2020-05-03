@@ -34,32 +34,32 @@ class scoring:
         print(pas.predict([query[0][1:]])[0])
         for u_row in query:
             score = np.round(pas.predict([u_row[1:]])[0], decimals=3)
-            cur.execute(f"UPDATE `bit-response` SET `pas-score` = {score} WHERE `id` = {u_row[0]}")
+            cur.execute(f"UPDATE `bit-response` SET `pas-score` = {score} WHERE `id` = {u_row[0]} AND `pas-score` = 0 ")
         cur.execute("SELECT `id`, `"+res_arr+"` FROM `bit-response`")
         query = [list(x) for x in cur.fetchall()]
         print(query[0])
         print(res.predict([query[0][1:]])[0])
         for u_row in query:
             score = np.round(res.predict([u_row[1:]])[0], decimals=3)
-            cur.execute(f"UPDATE `bit-response` SET `res-score` = {score} WHERE `id` = {u_row[0]}")
+            cur.execute(f"UPDATE `bit-response` SET `res-score` = {score} WHERE `id` = {u_row[0]} AND `res-score` = 0 ")
         cur.execute("SELECT `id`, `"+con_arr+"` FROM `bit-response`")
         query = [list(x) for x in cur.fetchall()]
         print(query[0])
         print(con.predict([query[0][1:]])[0])
         for u_row in query:
             score = np.round(con.predict([u_row[1:]])[0], decimals=3)
-            cur.execute(f"UPDATE `bit-response` SET `con-score` = {score} WHERE `id` = {u_row[0]}")
+            cur.execute(f"UPDATE `bit-response` SET `con-score` = {score} WHERE `id` = {u_row[0]} AND `con-score` = 0 ")
         cur.execute("SELECT `id`, `"+courage_arr+"` FROM `bit-response`")
         query = [list(x) for x in cur.fetchall()]
         print(query[0])
         print(crg.predict([query[0][1:]])[0])
         for u_row in query:
             score = np.round(crg.predict([u_row[1:]])[0], decimals=3)
-            cur.execute(f"UPDATE `bit-response` SET `crg-score` = {score} WHERE `id` = {u_row[0]}")
+            cur.execute(f"UPDATE `bit-response` SET `crg-score` = {score} WHERE `id` = {u_row[0]} AND `crg-score` = 0 ")
         cur.execute("SELECT `id`, `"+per_arr+"` FROM `bit-response`")
         query = [list(x) for x in cur.fetchall()]
         print(query[0])
         print(pers.predict([query[0][1:]])[0])
         for u_row in query:
             score = np.round(pers.predict([u_row[1:]])[0], decimals=3)
-            cur.execute(f"UPDATE `bit-response` SET `per-score` = {score} WHERE `id` = {u_row[0]}")
+            cur.execute(f"UPDATE `bit-response` SET `per-score` = {score} WHERE `id` = {u_row[0]} AND `per-score` = 0 ")

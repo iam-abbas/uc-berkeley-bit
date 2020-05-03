@@ -11,3 +11,4 @@
 .vscode
 *.zip
 webapp/__pycache__/application.cpython-38.pyc
+*.zip

@@ -118,7 +118,7 @@ let currentQuestionNumber = 0;
 showOnlyCurrentQuestion();
 
 submitButton().forEach(function (el) {
-  el.addEventListener("change", function (event) {
+  el.addEventListener("click", function (event) {
     setTimeout(function () {
       if (!isOnFinalQuestion()) {
         event.preventDefault();

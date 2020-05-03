@@ -40,11 +40,11 @@ function checks() {
 $(document).ready(checks);
 
 $(".lastone").click(function () {
+  $("#prevBtn").addClass("hidden");
   var disabled = $("#SurveyForm")
     .find(":input:disabled")
     .removeAttr("disabled");
   var sendData = JSON.stringify([getFormData($("#SurveyForm")), timeobj]);
-  console.log(sendData);
   $.ajax({
     url: "/post",
     type: "post",

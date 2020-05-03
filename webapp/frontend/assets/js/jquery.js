@@ -39,7 +39,9 @@ function checks() {
 
 $(document).ready(checks);
 
-$(".lastone").click(function () {
+$(".lastone").click(function (e) {
+  e.preventDefault();
+  e.stopImmediatePropagation();
   $("#prevBtn").addClass("hidden");
   var disabled = $("#SurveyForm")
     .find(":input:disabled")

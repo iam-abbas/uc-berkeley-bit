@@ -333,6 +333,18 @@ textarea:focus, input:focus {
   animation-fill-mode: forwards;
 }
 
+.enter-from-left {
+  animation-name: enter-from-left;
+  animation-duration: 300ms;
+  animation-fill-mode: forwards;
+}
+
+.leave-to-right {
+  animation: leave-to-right;
+  animation-duration: 300ms;
+  animation-fill-mode: forwards;
+}
+
 @keyframes enter-from-right {
   0% {
     opacity: 0;
@@ -352,6 +364,30 @@ textarea:focus, input:focus {
     transform: translateX(-10vw);
   }
 }
+
+
+
+@keyframes enter-from-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-10vw);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes leave-to-right {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(10vw);
+  }
+}
+
+
 
 @keyframes fadein {
   from {

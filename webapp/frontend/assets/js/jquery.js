@@ -12,32 +12,52 @@ function taptime(qdata) {
   }
 }
 
+$(":radio").click(function () {
+  var radioName = $(this).attr("name"); //Get radio name
+  $(":radio[name='" + radioName + "']").attr("disabled", true); //Disable all with the same name
+});
+
 function getFormData($form) {
   var unindexed_array = $form.serializeArray();
   var indexed_array = {};
 
-  $.map(unindexed_array, function(n, i) {
+  $.map(unindexed_array, function (n, i) {
     indexed_array[n["name"]] = n["value"];
   });
 
   return indexed_array;
 }
 
-$(".lastone").click(function() {
+function checks() {
+  if ($(".frst").is(":visible")) {
+    $("#prevBtn").addClass("hidden");
+  } else if ($(".eml").is(":visible")) {
+    $("#prevBtn").removeClass("hidden");
+  }
+  setTimeout(checks, 500);
+}
+
+$(document).ready(checks);
+
+$(".lastone").click(function () {
+  var disabled = $("#SurveyForm")
+    .find(":input:disabled")
+    .removeAttr("disabled");
   var sendData = JSON.stringify([getFormData($("#SurveyForm")), timeobj]);
+  console.log(sendData);
   $.ajax({
     url: "/post",
     type: "post",
     contentType: "application/json",
     dataType: "json",
     data: sendData,
-    success: function(data) {
+    success: function (data) {
       console.log(data);
     },
   });
 });
 
-var prevEmail
+var prevEmail;
 
 function validateName(name) {
   if (name.length == 0) {

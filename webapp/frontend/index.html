@@ -86,7 +86,7 @@
                 </p>
 
                 <form class="hidden sForm" id="SurveyForm" autocomplete="off">
-                    <div class="qna">
+                    <div class="qna frst">
                         <p class="question">
                             <span class="num"></span>
                             <span class="q">Enter Your Name</span>
@@ -94,10 +94,10 @@
 
                         <input name="name" class="text-field" type="text">
                         <span class="valMsg no-name" id="no-name">Please enter your name.</span>
-                        <span class="btn nxt-btn next" id="next">Next</span>
+                        <span class="btn nxt-btn next" id="pre-next">Next</span>
                     </div>
 
-                    <div class="qna">
+                    <div class="qna eml">
                         <p class="question">
                             <span class="num"></span>
                             <span class="q">Enter Your Mail</span>
@@ -107,7 +107,7 @@
                         <span class="valMsg no-email" id="no-email">Please enter your email.</span>
                         <span class="valMsg inval-email" id="inval-email">This email is invalid. Please re-enter your
                             email.</span>
-                        <span class="btn nxt-btn next" onclick="taptime('Blank')" id="next">Next</span>
+                        <span class="btn nxt-btn next" onclick="taptime('Blank')" id="pre-next">Next</span>
                     </div>
 
                     {% for q in data %}
@@ -312,7 +312,10 @@
                             </label>
                         </div>
                     </div>
+
                 </form>
+                <span class="btn hidden" id="prevBtn" onclick="displayPrev()" style="color: #6488ff"><i
+                        class="fas fa-arrow-left" aria-hidden="true"></i> Previous</span>
             </div>
         </div>
     </div>

@@ -11,9 +11,8 @@ const currentQuestion = () =>
 const questionnaire = () => document.querySelector("form");
 const agreeButton = () => document.querySelector("#take-survey");
 const submitButton = () => document.querySelectorAll("#next");
-
+const nextButton = () => document.querySelectorAll("#pre-next");
 const hideValMsg = () => {
-  //alert(document.querySelectorAll(".valMsg"));
   var valMsgs = currentQuestion().getElementsByClassName("valMsg");
   for (let i = 0; i < valMsgs.length; i++) {
     valMsgs[i].style.display = "none";
@@ -38,6 +37,20 @@ const unhideValMsg = (msg) => {
 
 var nowwidth = 0;
 var valMsg;
+
+const displayPrev = () => {
+  var disabled = $("#SurveyForm")
+    .find(":input:disabled")
+    .removeAttr("disabled");
+  questionnaire().classList.remove("enter-from-right");
+  questionnaire().classList.add("leave-to-right");
+  setTimeout(() => {
+    currentQuestionNumber--;
+    showOnlyCurrentQuestion();
+    questionnaire().classList.remove("leave-to-right");
+    questionnaire().classList.add("enter-from-left");
+  }, 600);
+};
 const displayNextQuestion = () => {
   hideValMsg();
   if (
@@ -45,7 +58,6 @@ const displayNextQuestion = () => {
       .getElementsByTagName("input")[0]
       .classList.contains("text-field")
   ) {
-    //alert(currentQuestion().getElementsByTagName("input")[0].name);
     if (currentQuestion().getElementsByTagName("input")[0].name == "name") {
       valMsg = validateName(
         currentQuestion().getElementsByTagName("input")[0].value
@@ -63,6 +75,7 @@ const displayNextQuestion = () => {
       return;
     }
   }
+  questionnaire().classList.remove("enter-from-left");
   questionnaire().classList.remove("enter-from-right");
   questionnaire().classList.add("leave-to-left");
   var currentWidth = 0;
@@ -101,10 +114,11 @@ agreeButton().addEventListener("click", function (event) {
 });
 
 let currentQuestionNumber = 0;
+
 showOnlyCurrentQuestion();
 
 submitButton().forEach(function (el) {
-  el.addEventListener("click", function (event) {
+  el.addEventListener("change", function (event) {
     setTimeout(function () {
       if (!isOnFinalQuestion()) {
         event.preventDefault();
@@ -114,6 +128,16 @@ submitButton().forEach(function (el) {
       if (isOnFinalQuestion()) {
         handleSubmission();
       }
+    }, 500);
+  });
+});
+
+nextButton().forEach(function (el) {
+  el.addEventListener("click", function (event) {
+    setTimeout(function () {
+      event.preventDefault();
+      displayNextQuestion();
+      return;
     }, 500);
   });
 });

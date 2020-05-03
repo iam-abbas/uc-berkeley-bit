@@ -3,9 +3,11 @@
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml
 !.elasticbeanstalk/*.global.yml
+.idea
 
 
 # VS Code
 
 .vscode
 *.zip
+webapp/__pycache__/application.cpython-38.pyc

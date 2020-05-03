@@ -33,9 +33,6 @@
     <script src="https://kit.fontawesome.com/c4124ecb75.js" crossorigin="anonymous"></script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-
-
 </head>
 
 <body>
@@ -43,113 +40,158 @@
         <div class="logo">
             <img src="{{ url_for('static', filename='images/logo.png') }}" style="height: 60px">
         </div>
+
         <div class="bii">
             <img src="{{ url_for('static', filename='images/head.png') }}" style="height: 170px">
         </div>
     </nav>
+
     <div class="container">
         <div class="row">
             <div class="col-md-12 survey">
-
                 <div id="progressBar" class="progress">
                     <div id="progress" class="progress-bar progress-bar-striped progress-bar-animated"
                         role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
-                <p class="info">
-                    <span class="heading"><span class="blue">BIT</span> measures an individual's passion and
-                        perseverance</span>
-                    <p class="consent">
-                        All products and/or research created by Project-BIT as part of their enrolment in IEOR 135/290
-                        ​Data-X​, is in the public domain
-                    </p>
+
+                <p class="info entry">
+                    <span class="heading">
+                        <span class="blue">BIT</span> is a survey that measures an individual's passion and perseverance
+                    </span>
                 </p>
-                <p id="thank-you" class="leave-to-left hidden" id="tahnkyou">
+                <p class="consent entry">
+                    All products and/or research created by Project-BIT as part of their enrollment in IEOR 135/290
+                    ​Data-X​, is in the public domain.
+                </p>
+                <div class="consent entry">
+                    <p class="agree">
+                        Your participation in this survey is voluntary.
+                        You may choose not to participate.
+                        If you decide to participate in this research survey, you may withdraw at any time.
+                        If you decide not to participate in this study or if you withdrawl from participating at any
+                        time, you will not be penalized.
+                    </p>
+                    <p class="agree">
+                        We will do our best to keep your information confidential.
+                        All data is stored in a password protected electronic format.
+                        The results of this study will be used for scholarly purposes only and may be shared with
+                        Berkeley University of California representatives.
+                    </p>
+                    <p class="agree">
+                        By clicking "Take This Survey", you agree that:
+                        <li class="agree">You have already read the above information.
+                        <li class="agree">You voluntarily agree to participate.
+                    </p>
+                </div>
+                <span class="btn nxt-btn take-survey entry" id="take-survey">Take This Survey</span>
+
+                <p id="thank-you" class="leave-to-left hidden" id="thankyou">
                     Thank You for filling out the BIT Survey.
                 </p>
 
+                <form class="hidden sForm" id="SurveyForm" autocomplete="off">
+                    <div class="qna frst">
+                        <p class="question">
+                            <span class="num"></span>
+                            <span class="q">Enter Your Name</span>
+                        </p>
 
-                <form id="SurveyForm" autocomplete="off">
-                    <div class="qna">
-                        <p class="question"><span class="num"></span><span class="q">Enter Your Name</span></p>
                         <input name="name" class="text-field" type="text">
-                        <span class="btn nxt-btn next" id="next">Next</span>
+                        <span class="valMsg no-name" id="no-name">Please enter your name.</span>
+                        <span class="btn nxt-btn next" id="pre-next">Next</span>
                     </div>
 
-                    <div class="qna">
-                        <p class="question"><span class="num"></span><span class="q">Enter Your Mail</span></p>
+                    <div class="qna eml">
+                        <p class="question">
+                            <span class="num"></span>
+                            <span class="q">Enter Your Mail</span>
+                        </p>
+
                         <input name="email" class="text-field" type="text">
-                        <span class="btn nxt-btn next" onclick="taptime('Blank')" id="next">Next</span>
+                        <span class="valMsg no-email" id="no-email">Please enter your email.</span>
+                        <span class="valMsg inval-email" id="inval-email">This email is invalid. Please re-enter your
+                            email.</span>
+                        <span class="btn nxt-btn next" onclick="taptime('Blank')" id="pre-next">Next</span>
                     </div>
-
 
                     {% for q in data %}
                     <div class="qna">
-                        <p class="question"><span class="num">{{loop.index0 +1}}.</span><span class="q">{{q[0]}}</span>
+                        <p class="question">
+                            <span class="num">{{loop.index0 +1}}.</span>
+                            <span class="q">{{q[0]}}</span>
                         </p>
+
                         <div class='btns'>
                             <label>
                                 <input id="next" onclick="taptime('Q{{loop.index0 +1}}-Time')"
                                     name='Q{{loop.index0+1}}-Ans' type='radio' value='1'>
-                                <span class='btn first'>Never</span>
+                                <span class='btn first'>Strongly Disagree</span>
                                 </input>
                             </label>
+
                             <label>
                                 <input id="next" onclick="taptime('Q{{loop.index0 +1}}-Time')"
                                     name='Q{{loop.index0+1}}-Ans' type='radio' value='2'>
-                                <span class='btn'>Sometimes</span>
+                                <span class='btn'>Disagree</span>
                                 </input>
                             </label>
+
                             <label>
                                 <input id="next" onclick="taptime('Q{{loop.index0 +1}}-Time')"
                                     name='Q{{loop.index0+1}}-Ans' type='radio' value='3'>
-                                <span class='btn'>Often</span>
+                                <span class='btn'>Neutral</span>
                                 </input>
                             </label>
+
                             <label>
                                 <input id="next" onclick="taptime('Q{{loop.index0 +1}}-Time')"
                                     name='Q{{loop.index0+1}}-Ans' type='radio' value='4'>
-                                <span class='btn'>Usually</span>
+                                <span class='btn'>Agree</span>
                                 </input>
                             </label>
+
                             <label>
                                 <input id="next" onclick="taptime('Q{{loop.index0 +1}}-Time')"
                                     name='Q{{loop.index0+1}}-Ans' type='radio' value='5'>
-                                <span class='btn last'>Always</span>
+                                <span class='btn last'>Strongly Agree</span>
                                 </input>
                             </label>
                         </div>
                     </div>
                     {% endfor %}
 
-
-
-
-
                     <div class="qna">
-                        <p class="question"><span class="num"></span><span class="q">Which of the following best
-                                describes your stage?</span>
+                        <p class="question">
+                            <span class="num"></span>
+                            <span class="q">Which of the following best describes you?</span>
+
                         </p>
+
                         <div class='btns'>
                             <label>
                                 <input id="next" name='Demo1' type='radio' value='1'>
                                 <span class='btn first' style="font-size: 15px;">Still in school</span>
                                 </input>
                             </label>
+
                             <label>
                                 <input id="next" name='Demo1' type='radio' value='2'>
                                 <span class='btn' style="font-size: 15px;">Recently started career</span>
                                 </input>
                             </label>
+
                             <label>
                                 <input id="next" name='Demo1' type='radio' value='3'>
                                 <span class='btn' style="font-size: 15px;">Middle of career </span>
                                 </input>
                             </label>
+
                             <label>
                                 <input id="next" name='Demo1' type='radio' value='4'>
                                 <span class='btn' style="font-size: 15px;">Well into career</span>
                                 </input>
                             </label>
+
                             <label>
                                 <input id="next" name='Demo1' type='radio' value='5'>
                                 <span class='btn last' style="font-size: 15px;">None of these</span>
@@ -157,31 +199,39 @@
                             </label>
                         </div>
                     </div>
+
                     <div class="qna">
-                        <p class="question"><span class="num"></span><span class="q">What is your highest education
-                                level</span>
+                        <p class="question">
+                            <span class="num"></span>
+                            <span class="q">What is your highest education level?</span>
+
                         </p>
+
                         <div class='btns'>
                             <label>
                                 <input id="next" name='Demo2' type='radio' value='1'>
                                 <span class='btn first' style="font-size: 15px;">High School Degree (or less)</span>
                                 </input>
                             </label>
+
                             <label>
                                 <input id="next" name='Demo2' type='radio' value='2'>
                                 <span class='btn' style="font-size: 15px;">Some college </span>
                                 </input>
                             </label>
+
                             <label>
                                 <input id="next" name='Demo2' type='radio' value='3'>
                                 <span class='btn' style="font-size: 15px;">Bachelors</span>
                                 </input>
                             </label>
+
                             <label>
                                 <input id="next" name='Demo2' type='radio' value='4'>
                                 <span class='btn' style="font-size: 15px;">Masters (or similar)</span>
                                 </input>
                             </label>
+
                             <label>
                                 <input id="next" name='Demo2' type='radio' value='5'>
                                 <span class='btn last' style="font-size: 15px;">PhD (or beyond)</span>
@@ -189,30 +239,38 @@
                             </label>
                         </div>
                     </div>
+
                     <div class="qna">
-                        <p class="question"><span class="num"></span><span class="q">What is your gender </span>
+                        <p class="question">
+                            <span class="num"></span>
+                            <span class="q">What is your gender?</span>
                         </p>
+
                         <div class='btns'>
                             <label>
                                 <input id="next" name='Demo3' type='radio' value='1'>
                                 <span class='btn first' style="font-size: 15px;">Female</span>
                                 </input>
                             </label>
+
                             <label>
                                 <input id="next" name='Demo3' type='radio' value='2'>
                                 <span class='btn' style="font-size: 15px;">Male</span>
                                 </input>
                             </label>
+
                             <label>
                                 <input id="next" name='Demo3' type='radio' value='3'>
                                 <span class='btn' style="font-size: 15px;">Non-binary</span>
                                 </input>
                             </label>
+
                             <label>
                                 <input id="next" name='Demo3' type='radio' value='4'>
                                 <span class='btn' style="font-size: 15px;">Chose not to disclose</span>
                                 </input>
                             </label>
+
                             <label>
                                 <input id="next" name='Demo3' type='radio' value='4'>
                                 <span class='btn last' style="font-size: 15px;">other</span>
@@ -220,30 +278,38 @@
                             </label>
                         </div>
                     </div>
+
                     <div class="qna">
-                        <p class="question"><span class="num"></span><span class="q">What is your ethnicity</span>
+                        <p class="question">
+                            <span class="num"></span>
+                            <span class="q">What is your ethnicity?</span>
                         </p>
+
                         <div class='btns'>
                             <label>
                                 <input id="next" name='Demo4' class="lastone" type='radio' value='1'>
                                 <span class='btn first' style="font-size: 15px;">White</span>
                                 </input>
                             </label>
+
                             <label>
                                 <input id="next" name='Demo4' class="lastone" type='radio' value='2'>
                                 <span class='btn' style="font-size: 15px;">Black/African American</span>
                                 </input>
                             </label>
+
                             <label>
                                 <input id="next" name='Demo4' class="lastone" type='radio' value='3'>
                                 <span class='btn' style="font-size: 15px;">American Indian/Alaska Native</span>
                                 </input>
                             </label>
+
                             <label>
                                 <input id="next" name='Demo4' class="lastone" type='radio' value='4'>
                                 <span class='btn' style="font-size: 15px;">Asian</span>
                                 </input>
                             </label>
+
                             <label>
                                 <input id="next" name='Demo4' class="lastone" type='radio' value='5'>
                                 <span class='btn last' style="font-size: 15px;">Native Hawaiian/Other Pacific
@@ -252,13 +318,15 @@
                             </label>
                         </div>
                     </div>
+
                 </form>
+                <span class="btn hidden" id="prevBtn" onclick="displayPrev()" style="color: #6488ff"><i
+                        class="fas fa-arrow-left" aria-hidden="true"></i> Previous</span>
             </div>
         </div>
     </div>
-    <script src="{{ url_for('static', filename='js/questions.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
-
+    <script defer src="{{ url_for('static', filename='js/questions.js') }}"></script>
+    <script defer src="{{ url_for('static', filename='js/jquery.js') }}"></script>
 </body>
 
 </html>

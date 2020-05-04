@@ -15,9 +15,6 @@ mysql = MySQL(app)
 def index_page():
     return redirect("/survey")
 
-@app.route('/results.html')
-def results_page():
-    return redirect("/results")
 
 @app.route('/post', methods=['POST'])
 def post_data():
@@ -50,9 +47,42 @@ def survey():
     data = cur.fetchall()
     return render_template('index.html', data=data)
 
-@app.route('/results')
+@app.route('/results', methods=["GET"])
 def results():
-    return render_template('results.html')
+    id = request.args.get("id")
+    msg = ""
+    if request.args.get("err"):
+        if int(request.args.get("err")) == 1:
+            msg = "Email you entered does not exist."
+
+    print(msg)
+    if id:
+        cur = mysql.connection.cursor()
+        cur.execute("SELECT AVG(`pas-score`), AVG(`per-score`), AVG(`con-score`), AVG(`res-score`), AVG(`crg-score`) FROM `bit-response`")
+        avgData = list(cur.fetchall())
+        cur.execute(f"SELECT `pas-score`, `per-score`, `con-score`, `res-score`, `crg-score` FROM `bit-response` WHERE `id` = {id} ")
+        data = cur.fetchall()
+        cur.close()
+        avgData = [int(x) for x in avgData[0]]
+        data = list(data[0])
+        return render_template('dashboard.html', data=data, avgs=avgData)
+    else:
+        return render_template('results.html', msg=msg)
+
+
+@app.route('/checkUser', methods=["POST"])
+def cuser():
+    if request.method == "POST":
+        email = request.form.get('email')
+        cur = mysql.connection.cursor()
+        cur.execute(f"SELECT `id` FROM `bit-response` WHERE `email` = '{email}' ORDER BY `id` DESC LIMIT 1")
+        data = cur.fetchall()
+        if len(data) >= 1:
+            return redirect(f"/results?id={data[0][0]}")
+        else:
+            return redirect("/results?err=1")
+
+    
 
 
 if __name__ == '__main__':

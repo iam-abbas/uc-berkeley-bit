@@ -1,0 +1,243 @@
+body {
+  max-width: 100vw;
+  font-family: "Roboto", sans-serif;
+  background-color: #FCF8F8;
+  overflow-x: hidden;
+}
+.passion {
+  color: #ada1ff;
+}
+.perseverance {
+  color: #8576e8;
+}
+.conscientiousness {
+  color: #6a54f7;
+}
+.resilience {
+  color: #bb00ff;
+}
+.courage {
+  color: #32aef0;
+}
+
+.passion-b {
+  background: #ada1ff;
+}
+.perseverance-b {
+  background: #8576e8;
+}
+.conscientiousness-b {
+  background: #6a54f7;
+}
+.resilience-b {
+  background: #bb00ff;
+}
+.courage-b {
+  background: #32aef0;
+}
+
+
+.progress-pie-chart.passion.gt-50 {
+  background-color: #ada1ff;
+}
+
+.progress-pie-chart.perseverance.gt-50 {
+  background-color: #8576e8;
+}
+
+.progress-pie-chart.conscientiousness.gt-50 {
+  background-color: #6a54f7;
+}
+
+.progress-pie-chart.resilience.gt-50 {
+  background-color: #bb00ff;
+}
+
+.progress-pie-chart.courage.gt-50 {
+  background-color: #32aef0;
+}
+
+.main-nav {
+  z-index: 99;
+  padding-top: 20px;
+  padding-left: 10%;
+  padding-right: 10%;
+  width: 100vw;
+  background: #6488FF;
+  margin-bottom: 50px;
+  box-shadow: 0px 0 30px 0px #0000000f;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  color: #6488FF;
+  font-size: 26px;
+}
+
+.nav-item {
+  padding-right: 30px
+}
+
+.nav-link {
+  font-weight: 500;
+  color: #fff!important;
+  text-transform: uppercase
+}
+
+.card-block {
+  margin-top: 30px;
+}
+
+.card {
+  min-width: 400px;
+  background-color: #fff;
+  box-shadow: 0px 0 30px 0px #0000000f;
+  border-radius: 10px;
+  border: none;
+  padding: 30px;
+  overflow: hidden;
+  margin-bottom: 30px;
+  min-height: 510px;
+}
+
+.card .about {
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.card .about h3, .card .about .lead {
+  font-weight: 300;
+  margin: 0;
+}
+
+.card .about h3 {
+  font-size: 24px;
+}
+
+.card .about .lead {
+  color: #aaa;
+}
+
+.list-inline {
+  display: inline-flex;
+}
+
+.list-inline h6 {
+  padding-right: 20px;
+  justify-content: center;
+  display: inline-flex;
+}
+
+.legend i {
+  padding-right: 5px;
+}
+
+.amp-pxl .ct-series-a .ct-bar {
+  stroke: #4083ff;
+}
+
+.amp-pxl .ct-series-b .ct-bar {
+  stroke: #26c6da;
+}
+
+/* Pie Chart */
+
+.progress-pie-chart {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: #E5E5E5;
+  position: relative;
+}
+
+
+.ppc-progress {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  left: calc(50% - 100px);
+  top: calc(50% - 100px);
+  width: 200px;
+  height: 200px;
+  clip: rect(0, 200px, 200px, 100px);
+}
+
+.ppc-progress .ppc-progress-fill {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  left: calc(50% - 100px);
+  top: calc(50% - 100px);
+  width: 200px;
+  height: 200px;
+  clip: rect(0, 100px, 200px, 0);
+  transform: rotate(60deg);
+}
+
+.gt-50 .ppc-progress {
+  clip: rect(0, 100px, 200px, 0);
+}
+
+.gt-50 .ppc-progress .ppc-progress-fill {
+  clip: rect(0, 200px, 200px, 100px);
+  background: #E5E5E5;
+}
+
+.ppc-percents {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  left: calc(50% - 173.91304px/2);
+  top: calc(50% - 173.91304px/2);
+  width: 173.91304px;
+  height: 173.91304px;
+  background: #fff;
+  text-align: center;
+  display: table;
+}
+
+.ppc-percents span {
+  display: block;
+  font-size: 2.6em;
+  font-weight: bold;
+}
+
+.pcc-percents-wrapper {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.progress-pie-chart {
+  padding: 10px;
+}
+
+.mini-chart {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  display: inline-flex;
+}
+
+.card-info {
+  padding-top: 5px;
+  max-width: 90%;
+  text-align: justify;
+}
+
+h4 {
+  font-weight: 400;
+}
+
+@media screen and (max-width: 770px) {
+  .main-container {
+    max-width: 100%;
+    padding: 10px;
+    margin: 0;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .main-container {
+    max-width: 80%;
+  }
+}

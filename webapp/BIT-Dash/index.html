@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BIT - Dashboard</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+    <link href="assets/plugins/chartist-js/dist/chartist.min.css" rel="stylesheet" />
+    <link href="assets/plugins/chartist-js/dist/chartist-init.css" rel="stylesheet" />
+    <link href="assets/plugins/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.css" rel="stylesheet" />
+    <link href="assets/plugins/c3-master/c3.min.css" rel="stylesheet" />
+    <link href="assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+    <link
+        href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap"
+        rel="stylesheet" />
+
+    <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark main-nav">
+        <a class="navbar-brand align-self-center" href="#">BIT DASHBOARD</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="nav navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Survey</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Results</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container main-container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="about">
+
+                        <h3>Your Score</h3>
+                        <p class="lead"></p>
+                    </div>
+                    <div class="card-block">
+                        <div id="scores" style="height: 290px; width: 100%;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="about">
+                                <div class="d-flex flex-wrap">
+                                    <div>
+                                        <h3 class="card-title">Scores Overview</h3>
+                                    </div>
+                                    <div class="ml-auto">
+                                        <ul class="list-inline">
+                                            <li>
+                                                <h6 style="color: #4083ff; font-size: 14px;"><i
+                                                        class="fa fa-circle font-10 m-r-10"
+                                                        style="padding-right: 5px"></i>Your Score</h6>
+                                            </li>
+                                            <li>
+                                                <h6 style="color: #26c6da; font-size: 14px;"><i
+                                                        class="fa fa-circle font-10 m-r-10"
+                                                        style="padding-right: 5px"></i>Global Average</h6>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="amp-pxl" style="height: 360px;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="about">
+                        <h3 class="card-title">Recommendations</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="about">
+                        <h3 class="card-title">Individual Scores</h3>
+                    </div>
+
+                    <div class="row align-items-center h-100 my-4">
+                        <div class="col-md-3 mini-chart">
+                            <div class="progress-pie-chart passion" data-percent="67">
+                                <div class="ppc-progress">
+                                    <div class="ppc-progress-fill passion-b"></div>
+                                </div>
+                                <div class="ppc-percents">
+                                    <div class="pcc-percents-wrapper">
+                                        <span>%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <h4>Passion</h4>
+                            <p class="card-info">
+                                Passion for our definition is not the typical one regarding just intense emotions but
+                                relates more towards having a direction that you care about.
+                                <br><br>
+                                People who have this passion do still have intense emotions about the thing they are
+                                passionate about, but it is also the thing that helps motivate their intentions and
+                                behaviors. They are consistently trying to engage or interact with what they are
+                                passionate about and this helps them pursue and stick with long term meaningful goals
+                                because they’re working on things that they are interested in and matter to them.
+
+                            </p>
+                        </div>
+                    </div>
+
+
+                    <div class="row align-items-center h-100 my-4">
+                        <div class="col-md-3 mini-chart">
+                            <div class="progress-pie-chart perseverance" data-percent="77">
+                                <div class="ppc-progress">
+                                    <div class="ppc-progress-fill perseverance-b"></div>
+                                </div>
+                                <div class="ppc-percents">
+                                    <div class="pcc-percents-wrapper">
+                                        <span>%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <h4>Perseverance</h4>
+                            <p class="card-info">
+                                Perseverance in our measurement was defined as a continued effort towards something
+                                despite challenges, setbacks, or delays in success.
+                                <br><br>
+                                People who are persistent don’t give up, even when they face failures or have to endure
+                                long periods of time to meet their goals. They often believe that through enough hard
+                                work they have the ability to overcome their difficulties and achieve their goals.
+
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="row align-items-center h-100 my-4">
+                        <div class="col-md-3 mini-chart">
+                            <div class="progress-pie-chart conscientiousness" data-percent="74">
+                                <div class="ppc-progress">
+                                    <div class="ppc-progress-fill conscientious-b"></div>
+                                </div>
+                                <div class="ppc-percents">
+                                    <div class="pcc-percents-wrapper">
+                                        <span>%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <h4>Conscientiousness</h4>
+                            <p class="card-info">
+                                Conscientiousness is a personality trait that describes impulse control and
+                                self-regulation of behavior as well as hard-workingness, aspirations for excellence, and
+                                dependability.
+                                <br><br>
+                                Individuals that are conscientious, tend to always do at least what is expected of them,
+                                but often more. They feel a sense of responsibility to finish whatever they begin and
+                                strive to do it well. Conscientious individuals are also more careful and diligent which
+                                in turn results in being committed to their work and following through on goals.
+
+
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="row align-items-center h-100 my-4">
+                        <div class="col-md-3 mini-chart">
+                            <div class="progress-pie-chart resilience" data-percent="50">
+                                <div class="ppc-progress">
+                                    <div class="ppc-progress-fill resilience-b"></div>
+                                </div>
+                                <div class="ppc-percents">
+                                    <div class="pcc-percents-wrapper">
+                                        <span>%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <h4>Resilience</h4>
+                            <p class="card-info">
+                                Resilience can be defined as the ability to bounce back from stressful life challenges
+                                such as adversity, misfortunes, and other difficulties and come out from these
+                                situations strengthened or more resourceful.
+                                <br><br>
+                                People who are resilient tend to be optimistic, creative, and confident which allows
+                                them to reappraise situations and regulate their emotions through difficult times. A
+                                positive outlook and ability to find meaning from situations helps resilient people to
+                                endure through hardships with hope and recover by finding purpose in their situations.
+                                They also tend to be flexible in being able to work through problems and have a belief
+                                in their influence on their life and others.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="row align-items-center h-100 my-4">
+                        <div class="col-md-3 mini-chart">
+                            <div class="progress-pie-chart courage" data-percent="80">
+                                <div class="ppc-progress">
+                                    <div class="ppc-progress-fill courage-b"></div>
+                                </div>
+                                <div class="ppc-percents">
+                                    <div class="pcc-percents-wrapper">
+                                        <span>%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <h4>Courage</h4>
+                            <p class="card-info">
+                                Courage is having the strength and confidence to try new things and withstand fears or
+                                dangers.
+                                <br><br>
+                                Courageous individuals then are able to perform difficult or maybe even dangerous
+                                actions. Courage enables action in people although they may be lacking in
+                                self-confidence or doubt. These people are not ones that don’t have any fear, but ones
+                                that are willing to put themselves out there or risk being vulnerable or face failure.
+                                This ability to manage fear is imperative to success as people are often faced with
+                                things they are scared to do, but things that are necessary to their work or growth.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/plugins/sticky-kit-master/dist/sticky-kit.min.js"></script>
+    <script src="assets/plugins/chartist-js/dist/chartist.min.js"></script>
+    <script src="assets/plugins/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.min.js"></script>
+    <!--c3 JavaScript -->
+    <script src="assets/plugins/d3/d3.min.js"></script>
+    <script src="assets/plugins/c3-master/c3.min.js"></script>
+    <script src="assets/js/main-chart.js"></script>
+</body>
+
+</html>

@@ -1,3 +1,9 @@
+const scrs = document.getElementById('scores');
+
+var userData = JSON.parse(scrs.getAttribute('data-user'));
+var GlobalData = JSON.parse(scrs.getAttribute('data-global'));
+
+
 $(function () {
   "use strict";
   var chart2 = new Chartist.Bar(
@@ -11,8 +17,8 @@ $(function () {
 		"Courage"
       ],
       series: [
-        [90, 50, 73, 77, 56],
-        [60, 63, 79, 65, 84],
+        userData,
+        GlobalData,
       ],
     },
     {
@@ -73,21 +79,24 @@ $(function () {
     bindto: "#scores",
     data: {
       columns: [
-        ["Passion", 70],
-        ["Perseverance", 80],
-        ["Conscientiousness", 40],
-        ["Resilience", 50],
-        ["Courage", 50],
+        ["Passion", userData[0]],
+        ["Perseverance", userData[1]],
+        ["Conscientiousness", userData[2]],
+        ["Resilience", userData[3]],
+        ["Courage", userData[4]],
       ],
 
       type: "donut",
-    },
+	},
     donut: {
       label: {
-        show: false,
+		// show: false,
+		format: function (value, ratio, id) {
+			return d3.format('')(value);
+		  }
       },
-      title: "BIT Score: 78/100",
-      width: 20,
+      title: "BIT Score: "+String((userData.reduce((a, b) => a + b))/5)+"/100",
+      width: 40,
     },
 
     legend: {

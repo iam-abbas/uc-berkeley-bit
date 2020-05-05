@@ -9,11 +9,16 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
 
-    <link href="{{ url_for('static', filename='dashboard/plugins/chartist-js/dist/chartist.min.css') }}" rel="stylesheet" />
-    <link href="{{ url_for('static', filename='dashboard/plugins/chartist-js/dist/chartist-init.css') }}" rel="stylesheet" />
-    <link href="{{ url_for('static', filename='dashboard/plugins/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.css') }}" rel="stylesheet" />
+    <link href="{{ url_for('static', filename='dashboard/plugins/chartist-js/dist/chartist.min.css') }}"
+        rel="stylesheet" />
+    <link href="{{ url_for('static', filename='dashboard/plugins/chartist-js/dist/chartist-init.css') }}"
+        rel="stylesheet" />
+    <link
+        href="{{ url_for('static', filename='dashboard/plugins/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.css') }}"
+        rel="stylesheet" />
     <link href="{{ url_for('static', filename='dashboard/plugins/c3-master/c3.min.css') }}" rel="stylesheet" />
-    <link href="{{ url_for('static', filename='dashboard/plugins/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='dashboard/plugins/font-awesome/css/font-awesome.min.css') }}"
+        rel="stylesheet">
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
@@ -92,6 +97,11 @@
                                                         class="fa fa-circle font-10 m-r-10"
                                                         style="padding-right: 5px"></i>Global Average</h6>
                                             </li>
+                                            <li>
+                                                <h6 style="color: #ff13b0; font-size: 14px;"><i
+                                                        class="fa fa-circle font-10 m-r-10"
+                                                        style="padding-right: 5px"></i>Top Score</h6>
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
@@ -105,15 +115,187 @@
             </div>
 
         </div>
+
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="about">
+                        <h3 class="card-title">Leaderboard</h3>
+                    </div>
+                    <div class="top3">
+                        <div class="two item">
+                            <div class="pos">
+                                2
+                            </div>
+                            <div class="name">
+                                {{larr[1][0]}}
+                            </div>
+                            <div class="score">
+                                {{larr[1][1]}}
+                            </div>
+                        </div>
+                        <div class="one item">
+                            <div class="pos">
+                                1
+                            </div>
+                            <div class="name">
+                                {{larr[0][0]}}
+                            </div>
+                            <div class="score">
+                                {{larr[0][1]}}
+                            </div>
+                        </div>
+                        <div class="three item">
+                            <div class="pos">
+                                3
+                            </div>
+                            <div class="name">
+                                {{larr[2][0]}}
+                            </div>
+                            <div class="score">
+                                {{larr[2][1]}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list">
+                        <div class="item">
+                            <div class="pos">
+                                4
+                            </div>
+                            <div class="name">
+                                {{larr[3][0]}}
+                            </div>
+                            <div class="score">
+                                {{larr[3][1]}}
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="pos">
+                                5
+                            </div>
+                            <div class="name">
+                                {{larr[4][0]}}
+                            </div>
+                            <div class="score">
+                                {{larr[4][1]}}
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="pos">
+                                6
+                            </div>
+                            <div class="name">
+                                {{larr[5][0]}}
+                            </div>
+                            <div class="score">
+                                {{larr[1][1]}}
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="pos">
+                                7
+                            </div>
+                            <div class="name">
+                                {{larr[6][0]}}
+                            </div>
+                            <div class="score">
+                                {{larr[6][1]}}
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="pos">
+                                8
+                            </div>
+                            <div class="name">
+                                {{larr[7][0]}}
+                            </div>
+                            <div class="score">
+                                {{larr[7][1]}}
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="pos">
+                                9
+                            </div>
+                            <div class="name">
+                                {{larr[8][0]}}
+                            </div>
+                            <div class="score">
+                                {{larr[9][1]}}
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="pos">
+                                10
+                            </div>
+                            <div class="name">
+                                {{larr[9][0]}}
+                            </div>
+                            <div class="score">
+                                {{larr[9][1]}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
                 <div class="card">
                     <div class="about">
                         <h3 class="card-title">Recommendations</h3>
                     </div>
+                    <div class="col-md-12 col-xs-12">
+                        <div class="card-h horizontal">
+                            <div class="card-image">
+                                <img src="https://i.imgur.com/7CPq5TK.png">
+                            </div>
+                            <div class="card-stacked">
+                                <div class="card-content">
+                                    <h3>Find Your Grit in a Crisis</h3>
+                                    <p>Angela Duckworth, bestselling author of “Grit: The Power of Passion and
+                                        Perseverance”, explains how to stay resilient in the face of the Covid-19
+                                        crisis.
+                                    </p>
+                                    <a href="https://www.youtube.com/watch?v=xKd3MD4n6ng" target="_blank"><button class="btn btn-styled">PLAY</button></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 col-xs-12">
+                        <div class="card-h horizontal">
+                            <div class="card-image">
+                                <img src="https://i.imgur.com/2IXOAkt.png">
+                            </div>
+                            <div class="card-stacked">
+                                <div class="card-content">
+                                    <h3>Value of Adding Patience and Perseverance</h3>
+                                    <p>The Value of Adding Patience and Perseverance to Your Life. When it comes to the
+                                        tortoise and the hare, slow and steady ultimately wins the race.</p>
+                                    <a href="https://www.youtube.com/watch?v=xKd3MD4n6ng" target="_blank"><button class="btn btn-styled">PLAY</button></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-xs-12">
+                        <div class="card-h horizontal">
+                            <div class="card-image">
+                                <img src="https://i.imgur.com/ewN0CTs.png">
+                            </div>
+                            <div class="card-stacked">
+                                <div class="card-content">
+                                    <h3>The Power of Passion and Perseverance</h3>
+                                    <p>Find the characteristics of the paragons of grit, how to love
+                                        what you do, becoming an expert,and finally, concrete steps to become grittier.
+                                    </p>
+                                    <a href="https://www.youtube.com/watch?v=xKd3MD4n6ng" target="_blank"><button class="btn btn-styled">PLAY</button></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
@@ -182,7 +364,7 @@
                         <div class="col-md-3 mini-chart">
                             <div class="progress-pie-chart conscientiousness" data-percent="{{ data[2] }}">
                                 <div class="ppc-progress">
-                                    <div class="ppc-progress-fill conscientious-b"></div>
+                                    <div class="ppc-progress-fill conscientiousness-b"></div>
                                 </div>
                                 <div class="ppc-percents">
                                     <div class="pcc-percents-wrapper">
@@ -271,10 +453,34 @@
             </div>
         </div>
     </div>
+    <div class="have-project mb-5">
+        <div class="container main-container">
+            <div class="haveAproject" style="background-image: url('https://i.imgur.com/XNHaTPp.jpg')">
+                <div class="row d-flex align-items-center">
+                    <div class="col-xl-7 col-lg-9 col-md-12">
+                        <div class="wantToWork-caption">
+                            <h2>Interested in learning more about EQ?</h2>
+                            <p>The Berkeley Innovation Index (BII) is both an open research concept, and a global
+                                collaboration project born out of interdisciplinary research by UC Berkeley faculty. In
+                                cooperation with industry professionals, BII has been developed to offer simple yet
+                                powerful ways to measure something never before measurable</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-5 col-lg-3 col-md-12">
+                        <div class="wantToWork-btn f-right">
+                            <a href="#" class="btn btn-ans">Know More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-    <script src="{{ url_for('static', filename='dashboard/plugins/sticky-kit-master/dist/sticky-kit.min.js') }}"></script>
+        </div>
+    </div>
+    <script
+        src="{{ url_for('static', filename='dashboard/plugins/sticky-kit-master/dist/sticky-kit.min.js') }}"></script>
     <script src="{{ url_for('static', filename='dashboard/plugins/chartist-js/dist/chartist.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='dashboard/plugins/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.min.js') }}"></script>
+    <script
+        src="{{ url_for('static', filename='dashboard/plugins/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.min.js') }}"></script>
     <!--c3 JavaScript -->
     <script src="{{ url_for('static', filename='dashboard/plugins/d3/d3.min.js') }}"></script>
     <script src="{{ url_for('static', filename='dashboard/plugins/c3-master/c3.min.js') }}"></script>

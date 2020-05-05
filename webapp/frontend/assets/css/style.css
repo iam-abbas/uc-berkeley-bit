@@ -365,8 +365,6 @@ textarea:focus, input:focus {
   }
 }
 
-
-
 @keyframes enter-from-left {
   0% {
     opacity: 0;
@@ -387,8 +385,6 @@ textarea:focus, input:focus {
   }
 }
 
-
-
 @keyframes fadein {
   from {
     opacity: 0;
@@ -397,3 +393,4 @@ textarea:focus, input:focus {
     opacity: 1;
   }
 }
+

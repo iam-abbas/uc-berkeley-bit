@@ -19,6 +19,7 @@ $(function () {
       series: [
         userData,
         GlobalData,
+        [94, 96, 90, 100, 100],
       ],
     },
     {

@@ -3,18 +3,22 @@ Measuring Human Perseverance
 
 
 # Usage Guidelines
-
+- Navigate to `\webapp`.
 ### Download Modules
-- ```pip install -r requirements.txt```
-##### For Windows
+ ```
+ pip install -r requirements.txt
+ ```
+### Run on localhost.
+- Now just run application.py with:
+```
+python application.py
+```
+- You should be able to use the application on `localhost:5000`
+
+##### Windows Error
 - Windows doesn't have a module for mysqlclient. So before you you install `requirements.txt`. Execute the following command in `\webapp`.
 - ``` pip install wheel/mysqlclient-1.4.6-cp38-cp38-win32.whl```
 
-### Run on localhost.
-
-- Now just run application.py with:
-- ```python application.py```
-- You should be able to use the application on `localhost:5000`
 
 # Contribution Guidelines
 

@@ -19,6 +19,9 @@ python application.py
 - Windows doesn't have a module for mysqlclient. So before you you install `requirements.txt`. Execute the following command in `\webapp`.
 - ``` pip install wheel/mysqlclient-1.4.6-cp38-cp38-win32.whl```
 
+### Testing
+- You can view the survey at http://localhost:5000/survey
+- You can view the dashboard at http://localhost:5000/dashboard
 
 # Contribution Guidelines
 

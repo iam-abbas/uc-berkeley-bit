@@ -1,7 +1,6 @@
 # GRIT
+
 Measuring Human Perseverance
-
-
 # Usage Guidelines
 - Navigate to `\webapp`.
 ### Download Modules

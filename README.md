@@ -46,3 +46,6 @@ python application.py
 - Remember to delete your branch after you have merged.
 
 ###### Note: Use slack and issues page for reporting issues and bugs.
+
+
+### TODO: > Add Technical Report 

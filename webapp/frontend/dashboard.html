@@ -50,7 +50,7 @@
                     <a class="nav-link" href="#">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Survey</a>
+                    <a class="nav-link" href="/survey">Survey</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Results</a>
@@ -74,6 +74,8 @@
                         <div id="scores" data-user="{{ data }}" data-global="{{ avgs }}"
                             style="height: 290px; width: 100%;"></div>
                     </div>
+                    <div class="border-top my-3"></div>
+<span class="final-score">Your BIT Score: <span class="bit">{{fscore}}</span>/100</span>
                 </div>
             </div>
             <div class="col-md-8">
@@ -98,7 +100,7 @@
                                                         style="padding-right: 5px"></i>Global Average</h6>
                                             </li>
                                             <li>
-                                                <h6 style="color: #ff13b0; font-size: 14px;"><i
+                                                <h6 style="color: #ff5c97; font-size: 14px;"><i
                                                         class="fa fa-circle font-10 m-r-10"
                                                         style="padding-right: 5px"></i>Top Score</h6>
                                             </li>
@@ -188,7 +190,7 @@
                                 {{larr[5][0]}}
                             </div>
                             <div class="score">
-                                {{larr[1][1]}}
+                                {{larr[5][1]}}
                             </div>
                         </div>
                         <div class="item">
@@ -213,7 +215,7 @@
                                 {{larr[7][1]}}
                             </div>
                         </div>
-                        <div class="item">
+                        <!-- <div class="item">
                             <div class="pos">
                                 9
                             </div>
@@ -224,7 +226,7 @@
                                 {{larr[9][1]}}
                             </div>
                         </div>
-                        <div class="item">
+                        <div class="item" style="margin-bottom: 0px;">
                             <div class="pos">
                                 10
                             </div>
@@ -234,12 +236,27 @@
                             <div class="score">
                                 {{larr[9][1]}}
                             </div>
+                        </div> -->
+                        <br>
+                        <center><span
+                                style="font-size: 18px; font-weight: 900; letter-spacing: 8px; opacity: 0.6;">...</span>
+                        </center><br>
+                        <div class="item" style="background: #f2f1ff;">
+                            <div class="pos" style="color: #080808;">
+                                {{uRank[0][2]}}
+                            </div>
+                            <div class="name">
+                                {{uRank[0][0]}}
+                            </div>
+                            <div class="score">
+                                {{uRank[0][1]}}
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-md-6">
-                <div class="card">
+                <div class="card" style="padding-bottom: 43px;">
                     <div class="about">
                         <h3 class="card-title">Recommendations</h3>
                     </div>
@@ -255,7 +272,8 @@
                                         Perseverance”, explains how to stay resilient in the face of the Covid-19
                                         crisis.
                                     </p>
-                                    <a href="https://www.youtube.com/watch?v=xKd3MD4n6ng" target="_blank"><button class="btn btn-styled">PLAY</button></a>
+                                    <a href="https://www.youtube.com/watch?v=IQN2BhsPRhU" target="_blank"><button
+                                            class="btn btn-styled">PLAY</button></a>
                                 </div>
                             </div>
                         </div>
@@ -271,7 +289,8 @@
                                     <h3>Value of Adding Patience and Perseverance</h3>
                                     <p>The Value of Adding Patience and Perseverance to Your Life. When it comes to the
                                         tortoise and the hare, slow and steady ultimately wins the race.</p>
-                                    <a href="https://www.youtube.com/watch?v=xKd3MD4n6ng" target="_blank"><button class="btn btn-styled">PLAY</button></a>
+                                    <a href="https://www.youtube.com/watch?v=xKd3MD4n6ng" target="_blank"><button
+                                            class="btn btn-styled">PLAY</button></a>
                                 </div>
                             </div>
                         </div>
@@ -287,7 +306,8 @@
                                     <p>Find the characteristics of the paragons of grit, how to love
                                         what you do, becoming an expert,and finally, concrete steps to become grittier.
                                     </p>
-                                    <a href="https://www.youtube.com/watch?v=xKd3MD4n6ng" target="_blank"><button class="btn btn-styled">PLAY</button></a>
+                                    <a href="https://www.youtube.com/watch?v=-Mfq-cA3sQk" target="_blank"><button
+                                            class="btn btn-styled">PLAY</button></a>
                                 </div>
                             </div>
                         </div>
@@ -468,7 +488,7 @@
                     </div>
                     <div class="col-xl-5 col-lg-3 col-md-12">
                         <div class="wantToWork-btn f-right">
-                            <a href="#" class="btn btn-ans">Know More</a>
+                            <a href="https://innovationindex.berkeley.edu/" target="_blank" class="btn btn-ans">Know More</a>
                         </div>
                     </div>
                 </div>

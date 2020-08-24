@@ -1,7 +1,7 @@
 var startTime;
 var lapsetime = 0;
 var timeobj = {};
-
+const loader = $("#loader");
 function taptime(qdata) {
   if (startTime) {
     lapsetime = new Date().getTime() - startTime - lapsetime;
@@ -47,6 +47,7 @@ $(".lastone").click(function (e) {
     .find(":input:disabled")
     .removeAttr("disabled");
   var sendData = JSON.stringify([getFormData($("#SurveyForm")), timeobj]);
+
   $.ajax({
     url: "/post",
     type: "post",
@@ -54,6 +55,8 @@ $(".lastone").click(function (e) {
     dataType: "json",
     data: sendData,
     success: function (data) {
+      loader.addClass("hidden");
+      $(".check-res").removeClass("hidden");
       console.log(data);
     },
   });

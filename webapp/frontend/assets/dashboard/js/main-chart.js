@@ -96,7 +96,7 @@ $(function () {
 			return d3.format('')(value);
 		  }
       },
-      title: "BIT Score: "+String((userData.reduce((a, b) => a + b))/5)+"/100",
+      title: "BIT Score: "+String(Math.round((userData.reduce((a, b) => a + b))/5))+"/100",
       width: 40,
     },
 

@@ -31,6 +31,8 @@ def post_data():
         stmt += f"'{data[0]['Demo1']}', '{data[0]['Demo2']}', '{data[0]['Demo3']}', '{data[0]['Demo4']}')"
         cur.execute(stmt)
         mysql.connection.commit()
+        cur.execute("UPDATE `bit-response` SET `final-score` = (`pas-score`+`per-score`+`res-score`+`con-score`+`crg-score`)/5 WHERE  id > 1")
+        mysql.connection.commit()
         cur.close()
         cur = mysql.connection.cursor()
         scores = scoring(cur)
@@ -79,10 +81,19 @@ def results():
             if list(x) not in larr:
                 larr.append(list(x))
         print(larr[:5])
+        cur.execute(f"""
+            SELECT `name`, `final-score`, FIND_IN_SET( `final-score`, (
+            SELECT GROUP_CONCAT( DISTINCT `final-score`
+            ORDER BY `final-score` DESC ) FROM `bit-response`)
+            ) AS `rank`
+            FROM `bit-response` WHERE `id` = {id}
+        """)
+        uRank = cur.fetchall()
+        print(list(uRank))
         cur.close()
         avgData = [int(x) for x in avgData[0]]
         data = list(data[0])
-        return render_template('dashboard.html', data=data, avgs=avgData, larr=larr)
+        return render_template('dashboard.html', fscore=round(sum(data)/5), data=data, avgs=avgData, larr=larr, uRank=uRank)
     else:
         return render_template('results.html', msg=msg)
 

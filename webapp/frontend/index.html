@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property='og:title' content="Berkeley Index for Tenacity">
     <meta property='og:image' content="{{ url_for('static', filename='images/banner.png') }}" />
-    <meta property='og:description' content="BIT is a research-backed state of the art tool which quantifies passion and perseverance." />
+    <meta property='og:description'
+        content="BIT is a research-backed state of the art tool which quantifies passion and perseverance." />
     <meta property='og:url' content="//www.berkeleyindex.com" />
     <title>BIT - Berkeley Index for Tenacity</title>
 
@@ -85,9 +86,21 @@
                 </div>
                 <span class="btn nxt-btn take-survey entry" id="take-survey">Take This Survey</span>
 
-                <p id="thank-you" class="leave-to-left hidden" id="thankyou">
+                <div id="thank-you" class="leave-to-left hidden" id="thankyou">
                     Thank You for filling out the BIT Survey.
-                </p>
+                    <br><br>
+                    <div id="loader">
+                        <div class="loadingio-spinner-pulse-lp12f9cxsjr">
+                            <div class="ldio-64wgmr20i7a">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="/results" class="check-res hidden"><span class="btn nxt-btn next">Check Your
+                            Results</span></a>
+                </div>
 
                 <form class="hidden sForm" id="SurveyForm" autocomplete="off">
                     <div class="qna frst">

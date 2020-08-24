@@ -5,6 +5,10 @@ body {
   overflow-x: hidden;
 }
 
+.bit {
+  color: #6688ff;
+  font-weight: 900;
+}
 .passion {
   color: #ada1ff;
 }
@@ -65,13 +69,20 @@ body {
   background-color: #32aef0;
 }
 
+.final-score {
+  text-align: center;
+  font-size: 22px;
+  font-weight: 500;
+  color: #494949;
+}
+
 .main-nav {
   z-index: 99;
   padding-top: 20px;
   padding-left: 10%;
   padding-right: 10%;
   width: 100vw;
-  background: #6488FF;
+  background: linear-gradient(to right, #d780ff 0%, #6488ff 100%);
   margin-bottom: 50px;
   box-shadow: 0px 0 30px 0px #0000000f;
 }
@@ -149,7 +160,7 @@ body {
 }
 
 .amp-pxl .ct-series-c .ct-bar {
-  stroke: #ff13b0;
+  stroke: #ff5c97;
 }
 
 /* Pie Chart */
@@ -509,10 +520,10 @@ h4 {
   left: 2.5rem;
 }
 
-.top3 .item:hover {
+/* .top3 .item:hover {
   -webkit-transform: scale(1.05);
   transform: scale(1.05);
-}
+} */
 
 .list {
   padding-left: 2rem;
@@ -584,14 +595,14 @@ h4 {
   opacity: 0.5;
 }
 
-.list .item:hover {
+/* .list .item:hover {
   -webkit-transform: scale(1.05);
   transform: scale(1.05);
 }
 
 .list .item:hover .pos {
   opacity: 0.8;
-}
+} */
 
 .card-h {
   position: relative;
